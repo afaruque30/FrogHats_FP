@@ -1,3 +1,4 @@
+package classes;
 /**********************************************
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.

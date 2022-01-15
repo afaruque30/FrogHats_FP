@@ -33,7 +33,9 @@ public class Map {
     }
 
     public void update() {
-        
+        final String ANSI_CLS = "\u001b[2J";
+        final String ANSI_HOME = "\u001b[H";
+        System.out.print(ANSI_CLS + ANSI_HOME);
         String test = "";
         for (int i = 0; i < this.map.length; i++) {
             if (i % Constants.Screen.MAX_WIDTH_NORMAL == 0) {

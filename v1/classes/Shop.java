@@ -1,3 +1,4 @@
+package classes;
 /** 
  * Shop for YoRPG
  */
@@ -9,17 +10,13 @@ public class Shop {
 
     static String f;
     //(Only 1 shop allowed per game!)
-    static String[] artifacts = {"Ring O Power", "Relic of TONKiness", "Gem of Confidence", "Heart of an Eagle", "Rabbit's foot", "?????"};
+    static String[] artifacts = {"Ring o' Power", "Relic of TONKiness", "Gem of Confidence", "Heart of an Eagle", "Rabbit's foot", "?????"};
 
     static int[] price = {10, 30, 80, 30, 5, 100};
     static int[] boost = {10, 20, 1, 50, 10, 1};
     static boolean[] bought = {false, false, false, false, false, false};
     
     //not the best
-    public Shop() {
-        
-        
-    }
     public static int find(String name) {
         for (int i = 0; i < artifacts.length; i++) {
             if (name.equals(artifacts[i])) {
@@ -28,6 +25,7 @@ public class Shop {
         } 
         return -1;
     }
+
     public static void buyItem(String name, Protagonist e) {
         int pos = find(name);
         if (bought[pos]) {
@@ -41,9 +39,8 @@ public class Shop {
             bought[pos] = true;
             e.update(pos);
         }
-
-
     }
+
     public static void purchase(Protagonist e) {
         while(true) {
             try {

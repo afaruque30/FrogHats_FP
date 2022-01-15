@@ -1,3 +1,4 @@
+package classes;
 //added subclass wizard
 public class Wizard extends Protagonist{
 

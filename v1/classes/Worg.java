@@ -1,3 +1,4 @@
+package classes;
 //added subclass monster worg, worgs are fast, but have little health and do low damage
 public class Worg extends Monster {
     public Worg() {

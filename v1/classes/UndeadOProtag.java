@@ -1,3 +1,4 @@
+package classes;
 /** !!!!!!!! PROBABLY NEVER GOING TO BE USED
  * Undead: 
  * - base 50 hp

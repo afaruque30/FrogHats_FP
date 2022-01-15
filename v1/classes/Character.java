@@ -1,3 +1,4 @@
+package classes;
 //cleaned up some code
 
 public class Character {

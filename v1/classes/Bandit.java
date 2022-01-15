@@ -1,3 +1,4 @@
+package classes;
 //will steal your coins if you aren't lucky!
 public class Bandit extends Monster {
     public Bandit() {

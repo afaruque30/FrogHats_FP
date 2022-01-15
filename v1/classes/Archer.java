@@ -1,3 +1,4 @@
+package classes;
 //basically a worg, w/ an ability to "dodge an attack"
 //added about method
 public class Archer extends Protagonist{

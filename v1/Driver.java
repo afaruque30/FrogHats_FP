@@ -8,7 +8,7 @@ public class Driver {
     gameMap.update();
     for (int i = 0; i < 10; i++) {
       try {
-        Thread.sleep(500);
+        Thread.sleep(200);
       } catch (Exception e) {
         System.out.println("err");
       }

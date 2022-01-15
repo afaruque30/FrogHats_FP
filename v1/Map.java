@@ -11,6 +11,7 @@ public class Map {
     public void clear() {
         System.out.flush();
         System.out.println("\033[H\033[2J");
+        System.out.flush();
         
     }
     public void load(String[] map, TestingCharacter c) {

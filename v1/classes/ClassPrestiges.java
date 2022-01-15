@@ -1,3 +1,4 @@
+package classes;
 /**
  * Useless class until I move YoRPG into another class and whatnot
  */

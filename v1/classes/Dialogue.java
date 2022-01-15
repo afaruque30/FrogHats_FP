@@ -1,3 +1,4 @@
+package classes;
 /**
  * Class to handle dialogue options ex: -- attacked -- 
  */

@@ -1,3 +1,4 @@
+package classes;
 /** WIP
  * Arcane
  *
@@ -8,6 +9,7 @@
  * - 1.7 attack Rating
  * - 110 strength
  */
+
 public class Arcane extends Wizard {
 
     public Arcane() {

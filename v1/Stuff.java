@@ -5,7 +5,7 @@ public class Stuff {
     String test = "";
     for (int i = 0; i < 20; i++) {
       test += "\n";
-      for (int e = 0; e < Constants.Screen.maxWidth; e++) {
+      for (int e = 0; e < Constants.Screen.maxWidthNormal; e++) {
         test += "▅";
       }
 

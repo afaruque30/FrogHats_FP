@@ -4,9 +4,9 @@ public class Driver {
     Map gameMap = new Map();
     TestingCharacter charlie = new TestingCharacter();
     gameMap.load(Constants.Levels.floorOne, charlie);
-    Runtime.getRuntime().exec("clear");
+    // Runtime.getRuntime().exec("clear");
 
-    // new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();  
+     new ProcessBuilder("cmd", "/c", "clear").inheritIO().start().waitFor();  
     gameMap.update();
     
     //ayyo is that ur brother

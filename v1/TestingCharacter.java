@@ -1,4 +1,4 @@
-import Constants.ColorsNames;
+
 
 public class TestingCharacter {
     
@@ -8,6 +8,6 @@ public class TestingCharacter {
 
     public TestingCharacter() {
         this.pos = 10;
-        color = Constants.ColorsNames.BLUE;
+        this.color = Constants.ColorsNames.BLUE;
     }
 }

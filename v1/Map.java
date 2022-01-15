@@ -20,6 +20,7 @@ public class Map {
     }
 
     public void update() {
+        clear();
         String test = "";
         for (int i = 0; i < this.map.length; i++) {
             if (i % Constants.Screen.maxWidthNormal == 0) {
@@ -30,25 +31,11 @@ public class Map {
         }
         System.out.println(test);
     }
-    //should take a Character
-    public void right() {
-        String temp = this.map[6];
-        this.map[6] = this.map[5];
-        this.map[5] = temp;
+    //
+    public void right(Character character) {
+        String temp = this.map[character.position + 1];
+        this.map[character.position + 1] = this.map[character position];
+        this.map[character.position] = temp;
     }
-    public static void main(String[] args) {
-        Map map = new Map();
-        String[] leve = {"h", "h", "h", "h", "h", "j", "h", "h"};
-        map.load(leve);
-        map.clear();
-        map.update();
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            System.out.println("error");
-        }
-        map.clear();
-        map.right();
-        map.update();
-    }
+    
 }

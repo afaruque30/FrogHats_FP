@@ -26,6 +26,7 @@ package classes;
 
 import java.io.*;
 import java.util.*;
+import classes.monsters.*;
 
 
 public class YoRPG {

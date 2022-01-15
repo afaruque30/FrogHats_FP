@@ -1,3 +1,4 @@
+package classes;
 //no updates
 
 public class Monster extends Character {  

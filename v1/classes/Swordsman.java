@@ -1,3 +1,4 @@
+package classes;
 //just a swordsman, bad class in my opinion!
 public class Swordsman extends Protagonist{
 

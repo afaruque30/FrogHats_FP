@@ -1,3 +1,4 @@
+package classes;
 /**
  * Sniper: One attack per 2 rounds
  *

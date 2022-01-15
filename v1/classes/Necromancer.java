@@ -1,3 +1,4 @@
+package classes;
 /** WIP (Currently teseting 1 undead)
  * Necromancer
  * 

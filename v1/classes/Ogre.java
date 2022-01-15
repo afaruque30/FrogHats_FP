@@ -1,3 +1,4 @@
+package classes;
 //new subclass ogre, basically a swordsman but monster
 public class Ogre extends Monster {
     public Ogre() {

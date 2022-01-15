@@ -1,3 +1,4 @@
+package classes;
 public class Guard extends Monster{
     public Guard() {
         super();

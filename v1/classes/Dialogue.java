@@ -2,6 +2,8 @@ package classes;
 /**
  * Class to handle dialogue options ex: -- attacked -- 
  */
+import classes.monsters.*;
+
 public class Dialogue {
     
 
@@ -42,10 +44,5 @@ public class Dialogue {
         e.getAttackType();
         System.out.println("Choose thy attack!");
     }
-    public static void main(String[] args) {
-        Archer elmo = new Archer("halleluga");
-        Bandit bandit = new Bandit();
-        System.out.println(bandit.health);
-        dealDamage(elmo, bandit);
-    }
+ 
 }

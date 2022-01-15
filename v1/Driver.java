@@ -1,5 +1,7 @@
+import classes.*;
 public class Driver {
   public static void main(String[] args) {
+    Monster monster = new Monster("org");
     //runs the game here
     Map gameMap = new Map();
     TestingCharacter charlie = new TestingCharacter();
@@ -17,5 +19,6 @@ public class Driver {
       gameMap.right(charlie);
       gameMap.update();
     }
+    
   }
 }

@@ -77,8 +77,14 @@ Kevin    :: started the proposal
 
 2022-1-15
 --------------------------------------------------------------
-Abdullah :: 
-Jason    :: 
+Abdullah :: Began the creation of mobs/organization of previous mobs
+            from an older version of YoRPG
+Jason    :: Began the creation of the map that will be played on.
 Kevin    :: 
+
+Problems :: Some errors we ran into:
+            While on Jason's gitbash the blocks appear fine, on 
+            Abdullah's gitbash doesn't display them correctly. 
+            To be fixed soon
 ==============================================================
 

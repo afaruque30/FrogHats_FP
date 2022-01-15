@@ -1,4 +1,7 @@
 public class Map {
+
+    public 
+
     public void load(String[] map) {
         String test = "";
         for (int i = 0; i < map.length; i++) {

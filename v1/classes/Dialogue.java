@@ -2,7 +2,7 @@ package classes;
 /**
  * Class to handle dialogue options ex: -- attacked -- 
  */
-import classes.monsters.*;
+import classes.monsters.Monster;
 
 public class Dialogue {
     

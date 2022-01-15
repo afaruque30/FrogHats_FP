@@ -15,17 +15,17 @@ public class Map {
     public void load(String[] map, TestingCharacter c) {
         this.map = new String[map.length];
         for (int i = 0; i < map.length; i++) {
-            if (c.getPos() != i) {
-                switch (map[i]) {
-                    case "G":
-                        this.map[i] = Constants.Colors.GREEN + Constants.Construction.Brick;
-                        break;
-                    case "E":
-                        this.map[i] = c.getColor() + Constants.Construction.Brick;
-                }
-            } else {
-                this.map[i] = c.getColor() + Constants.Construction.Brick;
+            
+            switch (map[i]) {
+                case "G":
+                    this.map[i] = Constants.Colors.GREEN + Constants.Construction.Brick;
+                    break;
+                case "E":
+                    this.map[i] = c.getColor() + Constants.Construction.Brick;
+                    c.setPos(i);
+                    break;
             }
+            
             
         }
     }
@@ -42,8 +42,26 @@ public class Map {
         }
         System.out.println(test);
     }
-    //
+    //Boundaries !
     public void right(TestingCharacter character) {
+        String temp = this.map[character.getPos() + 1];
+        this.map[character.getPos() + 1] = this.map[character.getPos()];
+        this.map[character.getPos()] = temp;
+        character.setPos(character.getPos() + 1);
+    }
+    public void left(TestingCharacter character) {
+        String temp = this.map[character.getPos() + 1];
+        this.map[character.getPos() + 1] = this.map[character.getPos()];
+        this.map[character.getPos()] = temp;
+        character.setPos(character.getPos() + 1);
+    }
+    public void up(TestingCharacter character) {
+        String temp = this.map[character.getPos() + 1];
+        this.map[character.getPos() + 1] = this.map[character.getPos()];
+        this.map[character.getPos()] = temp;
+        character.setPos(character.getPos() + 1);
+    }
+    public void down(TestingCharacter character) {
         String temp = this.map[character.getPos() + 1];
         this.map[character.getPos() + 1] = this.map[character.getPos()];
         this.map[character.getPos()] = temp;

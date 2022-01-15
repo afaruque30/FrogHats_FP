@@ -1,5 +1,8 @@
 public interface Constants {
     //Constants for the game
+
+
+    //Hashmap for colors?
     public enum ColorsNames {
       BLACK,
       RED,

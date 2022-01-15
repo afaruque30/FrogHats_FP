@@ -12,10 +12,21 @@ public class Map {
         System.out.println("\033[H\033[2J");
         System.out.flush();
     }
-    public void load(String[] map) {
+    public void load(String[] map, TestingCharacter c) {
         this.map = new String[map.length];
         for (int i = 0; i < map.length; i++) {
-            this.map[i] = map[i];
+            if (c.getPos() != i) {
+                switch (map[i]) {
+                    case "G":
+                        this.map[i] = Constants.Colors.GREEN + Constants.Construction.Brick;
+                        break;
+                    case "E":
+                        this.map[i] = c.getColor() + Constants.Construction.Brick;
+                }
+            } else {
+                this.map[i] = c.getColor() + Constants.Construction.Brick;
+            }
+            
         }
     }
 
@@ -23,7 +34,7 @@ public class Map {
         clear();
         String test = "";
         for (int i = 0; i < this.map.length; i++) {
-            if (i % Constants.Screen.maxWidthNormal == 0) {
+            if (i % Constants.Screen.MAX_WIDTH_NORMAL == 0) {
                 test += "\n";
             }
             test += this.map[i];
@@ -32,10 +43,11 @@ public class Map {
         System.out.println(test);
     }
     //
-    public void right(Character character) {
-        String temp = this.map[character.position + 1];
-        this.map[character.position + 1] = this.map[character position];
-        this.map[character.position] = temp;
+    public void right(TestingCharacter character) {
+        String temp = this.map[character.getPos() + 1];
+        this.map[character.getPos() + 1] = this.map[character.getPos()];
+        this.map[character.getPos()] = temp;
+        character.setPos(character.getPos() + 1);
     }
     
 }

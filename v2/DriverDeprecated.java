@@ -3,6 +3,7 @@ import java.io.Console;
 import classes.*;
 public class DriverDeprecated {
   public static void main(String[] args) {
+    System.out.println("\033[?25l");
 
     Menu menu = new Menu();
     Monster monster = new Monster("org");

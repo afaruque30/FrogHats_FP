@@ -33,7 +33,7 @@ public class Map {
 
     public void update() {
         clear();
-        System.out.println("\033[?25l");
+        
         String test = "";
         for (int i = 0; i < this.map.length; i++) {
             if (i % Constants.Screen.MAX_WIDTH_NORMAL == 0) {

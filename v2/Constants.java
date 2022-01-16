@@ -40,6 +40,10 @@ public interface Constants {
     public interface Construction {
       public final String Brick = "█";
     }
+    public interface MenuDialogue {
+      public final String MENU_OPTION_ONE = "PLAY";
+      public final String MENU_OPTION_TWO = "SETTINGS";
       
+    }
 
 }

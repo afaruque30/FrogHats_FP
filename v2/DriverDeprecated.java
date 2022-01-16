@@ -1,10 +1,8 @@
-import java.io.Console;
-
 import classes.*;
 public class DriverDeprecated  {
   public static void main(String[] args) {
     System.out.println("\033[?25l");
-    simpleSoundPlayer runner = new simpleSoundPlayer();
+    ClipControl runner = new ClipControl();
     Thread thread = new Thread(runner);
     
     thread.start();
@@ -15,9 +13,6 @@ public class DriverDeprecated  {
     Map gameMap = new Map();
     TestingCharacter charlie = new TestingCharacter();
     gameMap.load(Constants.Levels.floorOne, charlie);
-    final String ANSI_CLS = "\u001b[2J";
-    final String ANSI_HOME = "\u001b[H";
-    System.out.print(ANSI_CLS + ANSI_HOME);
     gameMap.update();
     for (int i = 0; i < 10; i++) {
       try {
@@ -29,7 +24,7 @@ public class DriverDeprecated  {
       gameMap.update();
     }
     System.out.println("\033[?25h");
-
-    runner.terminate();
+  
+    thread.interrupt();
   }
 }

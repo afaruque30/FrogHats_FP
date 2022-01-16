@@ -24,6 +24,7 @@ public class DriverDeprecated {
       gameMap.right(charlie);
       gameMap.update();
     }
+    System.out.println("\033[?25h");
     
   }
 }

@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "v2\\jlayer-1.0.1.jar"
+        ],
+        "exclude": [
+            "v2/jlayer-1.0.1.jar"
+        ]
+    }
+}

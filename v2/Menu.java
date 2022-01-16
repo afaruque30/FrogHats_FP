@@ -41,7 +41,6 @@ public class Menu implements Input{
     }
 
     public void load() {
-        
         switch (level) {
             case MENU: 
                 loadMenu();

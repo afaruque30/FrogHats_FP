@@ -88,3 +88,11 @@ Problems :: Some errors we ran into:
             To be fixed soon
 ==============================================================
 
+2022-1-16
+--------------------------------------------------------------
+Abdullah :: 
+Jason    :: Started working on Map, and forming skeletons of required java files
+Kevin    :: 
+
+Problems :: 
+==============================================================

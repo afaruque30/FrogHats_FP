@@ -1,8 +1,13 @@
+import java.io.Console;
+
 import classes.*;
 public class DriverDeprecated {
   public static void main(String[] args) {
+
+    Menu menu = new Menu();
     Monster monster = new Monster("org");
     //runs the game here
+    menu.load();
     Map gameMap = new Map();
     TestingCharacter charlie = new TestingCharacter();
     gameMap.load(Constants.Levels.floorOne, charlie);

@@ -6,12 +6,16 @@ public class Menu implements Input{
     }
     //Settings
     private boolean sound;
+    private boolean startGame;
     private String display;
     private LEVEL level;
+    private String input;
 
     public Menu() {
         sound = true;
+        startGame = false;
         level = LEVEL.MENU;
+        input = "";
     }
 
     public void loadMenu() {
@@ -37,6 +41,7 @@ public class Menu implements Input{
     }
 
     public void load() {
+        
         switch (level) {
             case MENU: 
                 loadMenu();
@@ -52,10 +57,23 @@ public class Menu implements Input{
                 break;
                 
         }
-    }
-    public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.loadMenu();
-        menu.update();
+        input = receiveInput();
+        switch (input) {
+            case "1":
+                startGame = true;
+                break;
+            case "2":
+                level = LEVEL.SETTINGS;
+                break;
+            case "3":
+                level = LEVEL.INSTRUCTIONS;
+                break;
+            case "b":
+                level = LEVEL.MENU;
+                break; 
+
+        }
+        if (!startGame) load();
+        
     }
 }

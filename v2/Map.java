@@ -8,7 +8,7 @@ public class Map {
         
     }
 
-    public void clear() {
+    public static void clear() {
         System.out.flush();
         System.out.println("\033[H\033[2J");
         

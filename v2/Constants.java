@@ -43,7 +43,12 @@ public interface Constants {
     public interface MenuDialogue {
       public final String MENU_OPTION_ONE = "PLAY";
       public final String MENU_OPTION_TWO = "SETTINGS";
+      public final String MENU_OPTION_THREE = "INSTRUCTIONS";
       
+      public final String SETTINGS_ONE = "";
+      public final String SETTINGS_TWO = "";
+
+      public final String INSTRUCTIONS = "Welcome to *insert game title here* blah blah blah lore, lore, lore";
     }
 
 }

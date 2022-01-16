@@ -1,17 +1,16 @@
-package classes.monsters;
-import classes.Character;
-public class Boss extends Monster {
-    public Boss() {
+package classes;
+public class Guard extends Monster{
+    public Guard() {
         super();
-        this.health = 300;
-        this.maxHealth = 300;
+        this.health = 100;
+        this.maxHealth = 100;
         this.speed = 0;
-        this.strength = 70;
+        this.strength = 50;
         this.attackRating = 1.5;
-        this.defense = 30;
+        this.defense = 0;
     }
     public String getType() {
-        return "Boss";
+        return "Guard";
     }
     public int attack(Character e) {
         calcNewDamage(this, e);
@@ -27,12 +26,13 @@ public class Boss extends Monster {
             lowerHP(5);
             e.lowerHP(this.damage, this.getType());
           }
-        } else if (Math.random() > 0.8) {
-            this.damage = e.getMaxHealth() / 5;
+        } else if (Math.random() > 0.6) {
+            this.defense += 10;
             e.lowerHP(this.damage, this.getType());
-            this.test = "\nBoss performs lifedrain. You lose 1/5 of your health! OUCH! He attacks you";
+            
+            this.test = "\nGuard performs strengthen. Guard's defense now increases by 10. Guard also attacks you";
         } else {
-          this.test = "\nBoss flicks you with his finger and attacks you";
+          this.test = "\nGuard stabs with a pike. Guard attacks you";
           e.lowerHP(this.damage, this.getType());
         }
         return this.damage;

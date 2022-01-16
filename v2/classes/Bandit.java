@@ -1,6 +1,6 @@
-package classes.monsters;
+package classes;
 //will steal your coins if you aren't lucky!
-import classes.Character;
+
 
 public class Bandit extends Monster {
     public Bandit() {

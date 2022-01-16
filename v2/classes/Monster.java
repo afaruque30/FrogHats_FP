@@ -1,6 +1,4 @@
-package classes.monsters;
-
-import classes.Character;
+package classes;
 
 public class Monster extends Character {
   public Monster() {

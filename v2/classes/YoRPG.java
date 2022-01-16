@@ -26,7 +26,6 @@ package classes;
 
 import java.io.*;
 import java.util.*;
-import classes.monsters.*;
 
 
 public class YoRPG {
@@ -41,7 +40,7 @@ public class YoRPG {
   Monster smaug;
   String classPick = "";
 
-  private int moveCount;
+  private int moveCount; 
   private boolean gameOver;
   private int difficulty;
 

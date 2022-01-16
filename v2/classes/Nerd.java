@@ -1,7 +1,7 @@
-package classes.monsters;
-import classes.Character;
-public class Guard extends Monster{
-    public Guard() {
+package classes;
+public class Nerd {
+
+    public Nerd() {
         super();
         this.health = 100;
         this.maxHealth = 100;
@@ -38,4 +38,6 @@ public class Guard extends Monster{
         }
         return this.damage;
       }
+
+
 }

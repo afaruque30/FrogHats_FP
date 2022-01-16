@@ -1,6 +1,4 @@
-package classes.monsters;
-
-import classes.Character;
+package classes;
 
 //new subclass ogre, basically a swordsman but monster
 public class Ogre extends Monster {

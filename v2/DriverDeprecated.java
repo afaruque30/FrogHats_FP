@@ -1,10 +1,13 @@
 import java.io.Console;
 
 import classes.*;
-public class DriverDeprecated {
+public class DriverDeprecated  {
   public static void main(String[] args) {
     System.out.println("\033[?25l");
-
+    simpleSoundPlayer runner = new simpleSoundPlayer();
+    Thread thread = new Thread(runner);
+    
+    thread.start();
     Menu menu = new Menu();
     Monster monster = new Monster("org");
     //runs the game here
@@ -26,6 +29,7 @@ public class DriverDeprecated {
       gameMap.update();
     }
     System.out.println("\033[?25h");
-    
+
+    runner.terminate();
   }
 }

@@ -6,7 +6,12 @@ public class DriverDeprecated  {
     Menu menu = new Menu();
     Monster monster = new Monster("org");
     //runs the game here
+    ClipControl runner = new ClipControl();
+    Thread thread = new Thread(runner);
+    
+    thread.start();
     menu.load();
+    thread.interrupt();
     Map gameMap = new Map();
     TestingCharacter charlie = new TestingCharacter();
     gameMap.load(Constants.Levels.floorOne, charlie);

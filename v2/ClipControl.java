@@ -35,7 +35,6 @@ class ClipControl implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             // clip.start();
             sequencer.start(); 
-           
         }
         sequencer.stop();
         sequencer.close();

@@ -92,6 +92,16 @@ Problems :: Some errors we ran into:
 --------------------------------------------------------------
 Abdullah :: 
 Jason    :: Started working on Map, and forming skeletons of required java files
+            Sound system now working using midi files to minimize file sizes
+Kevin    :: 
+
+Problems :: 
+==============================================================
+
+2022-1-17
+--------------------------------------------------------------
+Abdullah :: 
+Jason    :: Created v3, now working on class selection and interaction
 Kevin    :: 
 
 Problems :: 

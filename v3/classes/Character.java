@@ -100,10 +100,14 @@ public class Character {
     return this.type;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
   public String getAttackState() {
     return this.attackState;
   }
 
+ 
   public void getAttackType() {
     System.out.println("\n");
     for (int i = 0; i < this.attackTypes.length; i++) {

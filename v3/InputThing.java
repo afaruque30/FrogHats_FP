@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public interface Input {
+public interface InputThing {
 
     Scanner scanner = new Scanner(System.in);
     default String receiveInput() {

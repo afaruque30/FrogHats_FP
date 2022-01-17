@@ -1,6 +1,6 @@
 import java.lang.System.Logger.Level;
 
-public class Menu implements Input{
+public class Menu implements InputThing {
     public enum LEVEL {
         MENU,
         SETTINGS,

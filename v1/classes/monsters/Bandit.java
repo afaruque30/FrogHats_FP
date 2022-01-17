@@ -1,7 +1,8 @@
 package classes.monsters;
-//will steal your coins if you aren't lucky!
+
 import classes.Character;
 
+//will steal your coins if you aren't lucky!
 public class Bandit extends Monster {
     public Bandit() {
         super();
@@ -9,10 +10,6 @@ public class Bandit extends Monster {
     }
     public Bandit(String name) {
         super(name);
-        this.health = 75;
-    }
-    public Bandit(int health, int damage, int strength, double attackRating, int defense, String name, int level) {
-        super(health, strength, attackRating, defense, name, level);
         this.health = 75;
     }
     public String getType() {

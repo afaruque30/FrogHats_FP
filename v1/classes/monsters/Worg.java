@@ -15,12 +15,6 @@ public class Worg extends Monster {
         this.health = 50;
         this.strength = 15;
     }
-    public Worg(int health, int strength, double attackRating, int defense, String name, int level) {
-        super(health, strength, attackRating, defense, name, level);
-        this.speed = 200;
-        this.health = 50;
-        this.strength = 15;
-    }
     public String getType() {
       return "Worg";
     }

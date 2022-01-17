@@ -2,10 +2,7 @@ import classes.*;
 public class DriverDeprecated  {
   public static void main(String[] args) {
     System.out.println("\033[?25l");
-    ClipControl runner = new ClipControl();
-    Thread thread = new Thread(runner);
     
-    thread.start();
     Menu menu = new Menu();
     Monster monster = new Monster("org");
     //runs the game here
@@ -25,7 +22,7 @@ public class DriverDeprecated  {
     }
     System.out.println("\033[?25h");
   
-    thread.interrupt();
+    
     
   }
 }

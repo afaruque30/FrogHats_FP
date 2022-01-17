@@ -15,6 +15,22 @@ class ClipControl implements Runnable {
         }
        
     }
+    public void setSong(int i) {
+        switch (i) {
+            case 0:
+                path = new File("Opening.mid");
+                break;
+            case 1:
+                path = new File("Shop.mid");
+                break;
+            case 2: 
+                path = new File("Battle.mid");
+                break;
+            case 3:
+                path = new File("BossBattle.mid");
+                break;
+        }
+    }
     public void load() throws Exception {
         path = new File("Opening.mid");
         sequence = MidiSystem.getSequence(path);

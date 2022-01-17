@@ -1,3 +1,5 @@
+import java.lang.System.Logger.Level;
+
 public class Menu implements Input{
     public enum LEVEL {
         MENU,
@@ -45,33 +47,26 @@ public class Menu implements Input{
             case MENU: 
                 loadMenu();
                 update();
+                input = receiveInput();
+                if (input.equals("1")) startGame = true;
+                if (input.equals("2")) level = LEVEL.SETTINGS;
+                if (input.equals("3")) level = LEVEL.INSTRUCTIONS;
                 break;
             case SETTINGS:
                 loadSettings();
                 update();
+                input = receiveInput();
+                if (input.equals("b")) level = LEVEL.MENU;
                 break;
             case INSTRUCTIONS:
                 loadInstructions();
                 update();
+                input = receiveInput();
+                if (input.equals("b")) level = LEVEL.MENU;
                 break;
                 
         }
-        input = receiveInput();
-        switch (input) {
-            case "1":
-                startGame = true;
-                break;
-            case "2":
-                level = LEVEL.SETTINGS;
-                break;
-            case "3":
-                level = LEVEL.INSTRUCTIONS;
-                break;
-            case "b":
-                level = LEVEL.MENU;
-                break; 
-
-        }
+    
         if (!startGame) load();
         
     }

@@ -26,5 +26,6 @@ public class DriverDeprecated  {
     System.out.println("\033[?25h");
   
     thread.interrupt();
+    
   }
 }

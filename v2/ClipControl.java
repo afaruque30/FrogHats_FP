@@ -1,10 +1,11 @@
 import java.io.File;
 import javax.sound.sampled.*;
+import javax.sound.midi.*;
 
 class ClipControl implements Runnable {
     File path = new File("RocketFuel.aiff");
-    AudioInputStream ais;
-    Clip clip;
+    Sequence sequence;
+    Sequencer sequencer;
 
     public ClipControl() {
         try {
@@ -15,20 +16,28 @@ class ClipControl implements Runnable {
        
     }
     public void load() throws Exception {
-        path = new File("RocketFuel.aiff");
-        ais = AudioSystem.getAudioInputStream(path);
-        clip = AudioSystem.getClip();
+        path = new File("Opening.mid");
+        sequence = MidiSystem.getSequence(path);
+        sequencer = MidiSystem.getSequencer();
         
     }
     public void run() {
         try {
-            clip.open(ais);
+            // clip.open(ais);
+            sequencer.open();
+            sequencer.setSequence(sequence);
+    
+            
         } catch (Exception e) {
            
         }
         
         while (!Thread.currentThread().isInterrupted()) {
-            clip.start();
+            // clip.start();
+            sequencer.start(); 
+           
         }
+        sequencer.stop();
+        sequencer.close();
     }
 }

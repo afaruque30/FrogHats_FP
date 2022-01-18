@@ -101,7 +101,8 @@ Problems ::
 2022-1-17
 --------------------------------------------------------------
 Abdullah :: revamped map system, moving system works flawlessely, maps have been implemented
-            maps were made to look visually "good"? entities added (mobs and quest areas).
+            maps were made to look visually "good"? entities added (mobs and quest areas). 
+            All of this is in v4.
 Jason    :: Created v3, now working on class selection and interaction
 Kevin    :: 
 

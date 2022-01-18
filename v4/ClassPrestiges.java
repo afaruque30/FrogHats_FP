@@ -31,11 +31,11 @@ public class ClassPrestiges implements InputThing {
 
     public void pickAClass(Driver driver) {
         var done = false;
-        TileMap.clear();
+        TileMap.clearScreen();
         System.out.println("What is your name?");
         name = receiveInput();
         driver.protag.setName(name);
-        TileMap.clear();
+        TileMap.clearScreen();
         
         System.out.println("Please choose thy starting class!" +
                        "\n\t1. Tank\n\t2. Archer\n\t3. Wizard"
@@ -66,7 +66,7 @@ public class ClassPrestiges implements InputThing {
                     );
                     break;
                 default:
-                    TileMap.clear();
+                    TileMap.clearScreen();
                     System.out.println("Thy pick is not valid! Again!");
                     System.out.println("Please choose thy starting class!" +
                        "\n\t1. Tank\n\t2. Archer\n\t3. Wizard"

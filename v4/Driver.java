@@ -8,8 +8,10 @@ import mapentities.Location;
 import mapentities.Player;
 import mapentities.ShopOwner;
 import mapentities.TileMap;
+import classes.*;
 
 public class Driver {
+    Protagonist protag = new Protagonist();
 
     public static TileMap loadMap(Floor floor) {
         TileMap map = new TileMap();
@@ -29,17 +31,22 @@ public class Driver {
     }
 
     public static void main(String[] args) {
-        TileMap map = loadMap(Floor.ONE);
-        Player player = new Player(map, new Location(9, 2));
+        var e = true;
+        Driver driver = new Driver();
         ClipControl runner = new ClipControl();
+        Menu menu = new Menu();
+        ClassPrestiges classes = new ClassPrestiges();
         runner.setSong(0);
         Thread thread = new Thread(runner);
         thread.start();
         menu.load();
-        classes.pickAClass(driver);
-        thread.interrupt();
+        classes.pickAClass(driver);;
+        
+        TileMap map = loadMap(Floor.ONE);
+        Player player = new Player(map, new Location(9, 2));
+        
         map.add(player);
-        while (true) {
+        while (e) {
             map.render();
             Scanner in = new Scanner(System.in);
             switch (in.nextLine()) {
@@ -56,9 +63,13 @@ public class Driver {
                     player.move(0, 1);
                     break;
                 case "exit":
-                    return;
+                    e = false;
+                    break;
+                    
                 default:
             }
         }
+        thread.interrupt();
+       
     }
 }

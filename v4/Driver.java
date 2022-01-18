@@ -68,7 +68,7 @@ public class Driver {
                     
                 default:
             }
-            if (player.getLocation().equals(map.entities.get(0).getLocation())) e = false;
+            if (player.getLocation().equals(map.entities.get(0).getLocation())) map.entities.remove(0);
         }
         thread.interrupt();
        

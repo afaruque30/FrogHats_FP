@@ -7,6 +7,7 @@ import java.io.*;
 
 import classes.Protagonist;
 import classes.*;
+import mapentities.*;
 
 public class ClassPrestiges implements InputThing {
     enum basicClasses {

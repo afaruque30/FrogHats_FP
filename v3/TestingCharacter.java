@@ -1,8 +1,4 @@
-
-
 public class TestingCharacter {
-    
-
     private int pos;
     private String color;
 

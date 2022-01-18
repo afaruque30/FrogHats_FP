@@ -72,7 +72,7 @@ public interface Constants {
       
     }
     public interface Construction {
-      public final String Brick = "█";
+      public final String Brick = "0"; //cant see █ so using placeholder for now
     }
     public interface MenuDialogue {
       public final String MENU_OPTION_ONE = "PLAY";

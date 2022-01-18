@@ -1,7 +1,4 @@
-
-
 public class Map implements InputThing {
-
     private String[] map = {};
     private String currentBlock = "";
     private int posBlock = 0;
@@ -21,7 +18,7 @@ public class Map implements InputThing {
         this.map = new String[map.length];
         for (int i = 0; i < map.length; i++) {
             
-            switch (map[i]) {
+            switch (map[i]) { //checks what map[i] is and acts accordingly
                 case " ":
                     this.map[i] = Constants.Colors.GREEN + Constants.Construction.Brick;
                     break;

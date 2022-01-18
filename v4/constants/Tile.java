@@ -1,9 +1,9 @@
 package constants;
 
 public enum Tile {
-    GRASS (BColor.GREEN,  FColor.YELLOW, '░', 'G'),
-    PATH  (BColor.YELLOW, FColor.BLACK,  '▒', 'Y'),
-    WALL  (BColor.WHITE,  FColor.BLUE,   '▓', 'W'),
+    GRASS (BColor.GREEN,  FColor.YELLOW, ' ', 'G'),
+    PATH  (BColor.YELLOW, FColor.BLACK,  ' ', 'Y'),
+    WALL  (BColor.WHITE,  FColor.BLUE,   ' ', 'W'),
     DOOR  (BColor.WHITE,  FColor.BLACK,  ' ', 'D'),
     
     MONSTER,

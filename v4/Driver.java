@@ -31,6 +31,13 @@ public class Driver {
     public static void main(String[] args) {
         TileMap map = loadMap(Floor.ONE);
         Player player = new Player(map, new Location(9, 2));
+        ClipControl runner = new ClipControl();
+        runner.setSong(0);
+        Thread thread = new Thread(runner);
+        thread.start();
+        menu.load();
+        classes.pickAClass(driver);
+        thread.interrupt();
         map.add(player);
         while (true) {
             map.render();

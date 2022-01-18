@@ -30,7 +30,7 @@ public class TileMap {
             return true;
         } catch (Exception e) {
             System.out.println(e);
-            System.out.println(String.format("The file, %s, probably does not exist.", filename));
+            
             return false;
         }
     }

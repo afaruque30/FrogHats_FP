@@ -8,7 +8,7 @@ public enum Tile {
     
     MONSTER,
     SHOP;
-    
+
     private final BColor backgroundColor;
     private final FColor textColor;
     private final char   display;

@@ -8,7 +8,7 @@ import constants.Tile;
 
 public class TileMap {
     private Tile[][] map;
-    private ArrayList<MapEntity> entities;
+    public ArrayList<MapEntity> entities;
 
     public TileMap() {
         this.map = new Tile[0][0];

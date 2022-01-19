@@ -31,12 +31,15 @@ public class Driver {
         }
         return map;
     }
-    public static void check(Player player, TileMap map) {
+    public static void check(Player player, TileMap map, Thread thread) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && o instanceof Enemy) {
                 var x = o.getLocation().col;
                 var y = o.getLocation().row;
                 
+                Battle.perform();
+                thread.interrupt();
+
                 map.remove(o);
                 map.map[y][x] = Tile.keyToTile('Y');
                 map.add(player);
@@ -91,7 +94,7 @@ public class Driver {
                     // map.remove(map.entities.get(i));
                     // map.map[4][4] = Tile.keyToTile('Y');
                 
-            check(player, map);
+            check(player, map, thread);
         }
         // thread.interrupt();
        

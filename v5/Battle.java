@@ -25,6 +25,15 @@ public class Battle implements InputThing {
        
     }
     public static void perform(Protagonist protag) {
+        ClipControl runner = new ClipControl();
+        runner.setSong(2);
+        try {
+            runner.load();
+        } catch (Exception e) {
+            System.err.println("err");
+        }
+        Thread thread = new Thread(runner);
+        thread.start();
         Monster ogrek = new Monster();
         var pick = (int) (Math.random() * 3) + 1; 
         switch(pick) {

@@ -32,7 +32,7 @@ class ClipControl implements Runnable {
         }
     }
     public void load() throws Exception {
-        path = new File("Opening.mid");
+        
         sequence = MidiSystem.getSequence(path);
         sequencer = MidiSystem.getSequencer();
         

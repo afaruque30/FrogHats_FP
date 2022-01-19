@@ -1,4 +1,6 @@
-import mapentities.TileMap;
+import java.lang.System.Logger.Level;
+import mapentities.*;
+
 
 public class Menu implements InputThing {
     public enum LEVEL {
@@ -42,7 +44,7 @@ public class Menu implements InputThing {
         System.out.println(display);
     }
 
-    public void load() {
+    public void load(Thread thread) {
         
         switch (level) {
             case MENU: 
@@ -58,6 +60,9 @@ public class Menu implements InputThing {
                 update();
                 input = receiveInput();
                 if (input.equals("b")) level = LEVEL.MENU;
+                if (input.equals("music")) {
+                    thread.interrupt();
+                }
                 break;
             case INSTRUCTIONS:
                 loadInstructions();
@@ -68,7 +73,7 @@ public class Menu implements InputThing {
                 
         }
     
-        if (!startGame) load();
+        if (!startGame) load(thread);
         
     }
 }

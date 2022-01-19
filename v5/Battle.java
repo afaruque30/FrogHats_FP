@@ -76,8 +76,9 @@ public class Battle implements InputThing {
             }
             protag.setAttackType(protag.attackTypes[inputInt - 1]);
             
-            refresh(protag, ogrek);
+            
             var dealDamage = Dialogue.dealDamage(protag, ogrek);
+            refresh(protag, ogrek);
             System.out.println(dealDamage);
             try {
                 Thread.sleep(2000);

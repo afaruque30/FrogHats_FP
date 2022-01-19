@@ -48,6 +48,15 @@ public class Driver {
                 break;
 
             }
+            if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
+                
+                while (true) {
+                    System.out.println("SHOPPING");
+                }
+                
+
+            }
+
         }  
     }
     public static void main(String[] args) {
@@ -64,8 +73,9 @@ public class Driver {
         }
         Thread thread = new Thread(runner);
         thread.start();
-        // menu.load();
-        // classes.pickAClass(driver);;
+        menu.load(thread);
+        
+        classes.pickAClass(driver);;
         
         TileMap map = loadMap(Floor.ONE);
         Player player = new Player(map, new Location(9, 2));

@@ -1,14 +1,14 @@
 package classes;
 public enum ShopLoader {
-  RING ("         "),
-  RELIC("         "),
-  GEM  ("           "),
-  HEART("         "),
-  RABBIT("        "),
-  UN("" ),
-  SOLD("");
+  RING ("   R      "),
+  RELIC("   RE     "),
+  GEM  ("    G      "),
+  HEART("    H    "),
+  RABBIT("   RA    "),
+  UN(" U" ),
+  SOLD(" S");
 
-  private final String image;
+  public final String image;
 
   private ShopLoader(String image) {
     this.image = image;

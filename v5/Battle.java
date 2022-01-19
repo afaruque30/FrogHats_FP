@@ -12,7 +12,7 @@ import classes.*;
 
 public class Battle implements InputThing {
     
-    
+
     enum Monsters {
         OGRE,
         WORG,
@@ -22,8 +22,8 @@ public class Battle implements InputThing {
         TileMap map = new TileMap();
         map.load("Fight.txt"); // change plz to actual scene or smthing
         map.render(true);
-        
-       
+
+
     }
     public static void refresh(Protagonist protag, Monster ogrek) {
         TileMap.clearScreen();
@@ -53,7 +53,7 @@ public class Battle implements InputThing {
         Thread thread = new Thread(runner);
         thread.start();
         Monster ogrek = new Monster();
-        var pick = (int) (Math.random() * 3) + 1; 
+        var pick = (int) (Math.random() * 3) + 1;
         switch(pick) {
             case 1:
                 ogrek = new Ogre();
@@ -61,7 +61,7 @@ public class Battle implements InputThing {
                 ogrek = new Worg();
             case 3:
                 ogrek = new Bandit();
-                
+
         }
         while (ogrek.isAlive()) {
             refresh(protag, ogrek);
@@ -75,8 +75,8 @@ public class Battle implements InputThing {
                 //TODO: handle exception
             }
             protag.setAttackType(protag.attackTypes[inputInt - 1]);
-            
-            
+
+
             var dealDamage = Dialogue.dealDamage(protag, ogrek);
             refresh(protag, ogrek);
             System.out.println(dealDamage);
@@ -85,9 +85,9 @@ public class Battle implements InputThing {
             } catch (Exception e) {
                 //TODO: handle exception
             }
-            
-            
-            
+
+
+
         }
         // if ( !smaug.isAlive() && !pat.isAlive() ) {
         //     Dialogue.bothDie();
@@ -114,7 +114,7 @@ public class Battle implements InputThing {
         //         System.out.println("Thee hath picked no number!");
         //       }
         //     }
-    
+
         //     if (f == 1) {
         //       pat.increaseLevel(2, 0);
         //     } else {
@@ -127,11 +127,11 @@ public class Battle implements InputThing {
         System.out.println("YOU HAVE SLAIN MOB");
         thread.interrupt();
 
-      
+
     }
     public static void main(String[] args) {
         Protagonist protag = new Tank();
-        
+
         perform(protag);
     }
 }

@@ -1,4 +1,4 @@
-package classes;
+
 /**
  * Shop for YoRPG
  */
@@ -44,8 +44,28 @@ public class Shop {
         }
     }
     public static void load(Protagonist e) {
+      ClipControl runner = new ClipControl();
+      runner.setSong(1);
+      try {
+          runner.load();
+      } catch (Exception oaijsfalkdsf) {
+          System.err.println("err");
+      }
+      Thread thread = new Thread(runner);
+      thread.start();
       for (ShopLoader shop : ShopLoader.values()) {
-        System.out.println(shop.valueOf(shop));
+        loadOptions(e, shop);
+        System.out.println(shop.image);
+      }
+    }
+    public static void loadOptions(Protagonist e, ShopLoader shop) {
+      switch (shop) {
+        case RING:
+          if (e.artifacts[0] == 0) {
+            System.out.println("ALREADY BOUGHT");
+          }
+          break;
+
       }
     }
     public static void purchase(Protagonist e) {

@@ -3,10 +3,12 @@ import java.io.File;
 
 import mapentities.*;
 import classes.Bandit;
+import classes.Dialogue;
 import classes.Ogre;
 import classes.Protagonist;
 import classes.Monster;
 import classes.Worg;
+import classes.*;
 
 public class Battle implements InputThing {
     
@@ -38,15 +40,18 @@ public class Battle implements InputThing {
         if (ogrek.getHealth() >= 100) {
             System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
         } else {
-            System.out.println("\t\t\t\t\t\tHEALTH:  " + ogrek.getHealth());
+            System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
         }
-        
         load();
+        System.out.println("Your Health: " + protag.getHealth());
+        System.out.println("Your Attacks:");
+        Dialogue.listOptions(protag);
+        
 
       
     }
     public static void main(String[] args) {
-        Protagonist protag = new Protagonist();
+        Protagonist protag = new Tank();
         
         perform(protag);
     }

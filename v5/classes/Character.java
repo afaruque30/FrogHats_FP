@@ -109,7 +109,6 @@ public class Character {
 
  
   public void getAttackType() {
-    System.out.println("\n");
     for (int i = 0; i < this.attackTypes.length; i++) {
       System.out.println((i + 1) + ". " + attackTypes[i]);
     }

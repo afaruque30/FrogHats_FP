@@ -22,9 +22,27 @@ public class Battle implements InputThing {
         TileMap map = new TileMap();
         map.load("Fight.txt"); // change plz to actual scene or smthing
         map.render(true);
+        
        
     }
+    public static void refresh(Protagonist protag, Monster ogrek) {
+        TileMap.clearScreen();
+        if (ogrek.getHealth() >= 100) {
+            System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
+        } else {
+            System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
+        }
+        load();
+        System.out.println("Your Health: " + protag.getHealth());
+    }
     public static void perform(Protagonist protag) {
+        InputThing input = new InputThing() {
+            @Override
+            public String receiveInput() {
+                // TODO Auto-generated method stub
+                return InputThing.super.receiveInput();
+            }
+        };
         ClipControl runner = new ClipControl();
         runner.setSong(2);
         try {
@@ -45,17 +63,68 @@ public class Battle implements InputThing {
                 ogrek = new Bandit();
                 
         }
-        TileMap.clearScreen();
-        if (ogrek.getHealth() >= 100) {
-            System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
-        } else {
-            System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
+        while (ogrek.isAlive()) {
+            refresh(protag, ogrek);
+            System.out.println("Your Attacks:");
+            Dialogue.listOptions(protag);
+            var inputRaw = input.receiveInput();
+            int inputInt = 0;
+            try {
+                inputInt = Integer.parseInt(inputRaw);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            protag.setAttackType(protag.attackTypes[inputInt - 1]);
+            
+            refresh(protag, ogrek);
+            var dealDamage = Dialogue.dealDamage(protag, ogrek);
+            System.out.println(dealDamage);
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            
+            
+            
         }
-        load();
-        System.out.println("Your Health: " + protag.getHealth());
-        System.out.println("Your Attacks:");
-        Dialogue.listOptions(protag);
-        
+        // if ( !smaug.isAlive() && !pat.isAlive() ) {
+        //     Dialogue.bothDie();
+        //     try {
+        //         Thread.sleep(3000);
+        //         //LIVES --?
+        //     } catch (Exception e) {
+        //         //TODO: handle exception
+
+        //     }
+        // }
+        // else if ( !smaug.isAlive() ) {
+        //     Dialogue.beastDies();
+        //     pat.attackRating += 0.05;
+        //     while (true) {
+        //       try {
+        //         f = Integer.parseInt(in.readLine());
+        //         if (f > 0 && f < 3) {
+        //           break;
+        //         } else {
+        //           System.out.println("Not a valid choice");
+        //         }
+        //       } catch (Exception z) {
+        //         System.out.println("Thee hath picked no number!");
+        //       }
+        //     }
+    
+        //     if (f == 1) {
+        //       pat.increaseLevel(2, 0);
+        //     } else {
+        //       pat.increaseLevel(0, 2);
+        //     }
+        //     if (pat.getLevel() == 5 ) {
+        //       this.prestige();
+        //     }
+        TileMap.clearScreen();
+        System.out.println("YOU HAVE SLAIN MOB");
+        thread.interrupt();
 
       
     }

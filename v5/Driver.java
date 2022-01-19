@@ -31,14 +31,16 @@ public class Driver {
         }
         return map;
     }
-    public static void check(Player player, TileMap map, Thread thread) {
+    public static void check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && o instanceof Enemy) {
+                
                 var x = o.getLocation().col;
                 var y = o.getLocation().row;
                 
-                Battle.perform();
                 thread.interrupt();
+                Battle.perform(protag);
+                
 
                 map.remove(o);
                 map.map[y][x] = Tile.keyToTile('Y');
@@ -50,13 +52,18 @@ public class Driver {
     }
     public static void main(String[] args) {
         var e = true;
-        // Driver driver = new Driver();
-        // ClipControl runner = new ClipControl();
-        // Menu menu = new Menu();
-        // ClassPrestiges classes = new ClassPrestiges();
-        // runner.setSong(0);
-        // Thread thread = new Thread(runner);
-        // thread.start();
+        Driver driver = new Driver();
+        ClipControl runner = new ClipControl();
+        Menu menu = new Menu();
+        ClassPrestiges classes = new ClassPrestiges();
+        runner.setSong(0);
+        try {
+            runner.load();
+        } catch (Exception el) {
+            //TODO: handle exception
+        }
+        Thread thread = new Thread(runner);
+        thread.start();
         // menu.load();
         // classes.pickAClass(driver);;
         
@@ -94,7 +101,7 @@ public class Driver {
                     // map.remove(map.entities.get(i));
                     // map.map[4][4] = Tile.keyToTile('Y');
                 
-            check(player, map, thread);
+            check(driver, player, map, thread, driver.protag);
         }
         // thread.interrupt();
        

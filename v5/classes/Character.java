@@ -24,7 +24,7 @@ public class Character {
   final static String[] classTypes = { "Archer", "Sniper", "Gunner", "Tank", "Tonk", "Fortress", "Wizard", "Arcane",
       "Necromancer", "Swordsman", "Paladin", "Barbarian" };
 
-  protected String[] attackTypes = { "Bash", "RNGesus Bash" };
+  public String[] attackTypes = { "Bash", "RNGesus Bash" };
 
   public Character() {
     this.health = 100;

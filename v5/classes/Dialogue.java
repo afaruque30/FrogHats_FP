@@ -8,22 +8,25 @@ public class Dialogue {
     public Dialogue() {
 
     }
-    public static void dealDamage(Protagonist protagonist, Monster monster) {
+    public static String dealDamage(Protagonist protagonist, Monster monster) {
         int protagistDamage = protagonist.attack(monster);
+        var placeHolder = "";
         
-        System.out.print( protagonist.test + monster.getType() + " for " + protagistDamage +
-                            " points of damage.");
+        placeHolder += protagonist.test + monster.getType() + " for " + protagistDamage +
+                            " points of damage.";
         int monsterDamage = monster.attack(protagonist);
         if (monster.isAlive())
-          System.out.println( monster.test + 
-                              " for " + monsterDamage + " points of damage.");
-            System.out.println(protagonist.attackMiss);
-            System.out.println(monster.attackMiss);
+          placeHolder += monster.test + 
+                              " for " + monsterDamage + " points of damage.";
+            placeHolder += protagonist.attackMiss + "\n" +
+          monster.attackMiss;
+            
         if (protagonist.isAlive() && monster.isAlive()) {
-            System.out.println("\n\t" + protagonist.getName()
+            placeHolder += "\n\t" + protagonist.getName()
                               + " Health: " + protagonist.getHealth() + "\n\t" + "Monster Health: " +
-                              monster.getHealth());
+                              monster.getHealth();
         }
+        return placeHolder;
     }
     public static void bothDie() {
         System.out.println( "'Twas an epic battle, to be sure... " +

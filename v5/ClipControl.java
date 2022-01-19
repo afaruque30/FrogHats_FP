@@ -35,6 +35,7 @@ class ClipControl implements Runnable {
         
         sequence = MidiSystem.getSequence(path);
         sequencer = MidiSystem.getSequencer();
+        sequencer.setLoopCount(Sequencer.LOOP_CONTINUOUSLY);
         
     }
     public void run() {

@@ -111,3 +111,12 @@ Kevin    ::
 
 Problems :: 
 ==============================================================
+
+2022-1-17
+--------------------------------------------------------------
+Abdullah :: 
+Jason    :: Created v5, added Monster interaction and dissapearance, Battle scences now generated, umm thats it
+Kevin    :: 
+
+Problems :: We are not where we want to be, ie. we have to leave out some easter eggs and polishing...
+==============================================================

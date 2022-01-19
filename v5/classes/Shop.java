@@ -3,17 +3,11 @@ package classes;
  * Shop for YoRPG
  */
 import mapentities.*;
+import classes.*;
 import java.io.*;
 
 public class Shop {
-    enum img {
-      RING ("         "),
-      RELIC("         "),
-      GEM  ("           "),
-      HEART("         "),
-      RABBIT("        "),
-      UN("" ),
-    }
+
     static InputStreamReader isr = new InputStreamReader( System.in );
     static BufferedReader in = new BufferedReader( isr );
 
@@ -50,7 +44,9 @@ public class Shop {
         }
     }
     public static void load(Protagonist e) {
-
+      for (ShopLoader shop : ShopLoader.values()) {
+        System.out.println(shop.valueOf(shop));
+      }
     }
     public static void purchase(Protagonist e) {
         while(true) {
@@ -100,5 +96,10 @@ public class Shop {
                              "\n\t7. Exit" +
                              "\n\tBuy something or type 7 to exit!" +
                              "\n\tYour coins: " + e.getCoins());
+    }
+    public static void main(String[] args) {
+      Shop shop = new Shop();
+      Protagonist protag = new Protagonist();
+      shop.load(protag);
     }
 }

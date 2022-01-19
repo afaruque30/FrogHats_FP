@@ -8,6 +8,12 @@ public enum ShopLoader {
   UN("" ),
   SOLD("");
 
+  private final String image;
+
+  private ShopLoader(String image) {
+    this.image = image;
+  }
+
 
 
 

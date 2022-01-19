@@ -21,4 +21,8 @@ public class Player extends MapEntity{
             }
         }
     }
+
+    public void moveTo(Location location) {
+        this.location = location;
+    }
 }

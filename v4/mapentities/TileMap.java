@@ -52,7 +52,7 @@ public class TileMap {
     }
 
     public boolean inBounds(int row, int col) {
-        return row > 0 && row < this.map.length && col > 0 && col < this.map[row].length;
+        return row >= 0 && row < this.map.length && col >= 0 && col < this.map[row].length;
     }
 
     public MapEntity entityOn(int row, int col) {

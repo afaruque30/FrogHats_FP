@@ -9,10 +9,21 @@ import constants.Tile;
 public class TileMap {
     public Tile[][] map;
     public ArrayList<MapEntity> entities;
+    public Location start;
+    public Location end;
 
     public TileMap() {
         this.map = new Tile[0][0];
         this.entities = new ArrayList<>();
+        this.start = null;
+        this.end = null;
+    }
+
+    public TileMap(Location start, Location end) {
+        this.map = new Tile[0][0];
+        this.entities = new ArrayList<>();
+        this.start = start;
+        this.end = end;
     }
 
     public boolean load(String filename) {
@@ -52,7 +63,7 @@ public class TileMap {
     }
 
     public boolean inBounds(int row, int col) {
-        return row > 0 && row < this.map.length && col > 0 && col < this.map[row].length;
+        return row >= 0 && row < this.map.length && col >= 0 && col < this.map[row].length;
     }
 
     public MapEntity entityOn(int row, int col) {

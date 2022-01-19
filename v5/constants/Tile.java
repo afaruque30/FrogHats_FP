@@ -5,6 +5,7 @@ public enum Tile {
     PATH  (BColor.YELLOW, FColor.BLACK,  ' ', 'Y'),
     WALL  (BColor.WHITE,  FColor.BLUE,   ' ', 'W'),
     DOOR  (BColor.WHITE,  FColor.BLACK,  ' ', 'D'),
+    NEXT  (BColor.PURPLE, FColor.BLACK,  '+', 'P'),
 
     RED (null, FColor.RED, ' ', 'R'),
 

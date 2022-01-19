@@ -16,7 +16,7 @@ public class Driver {
     Protagonist protag = new Protagonist();
 
     public static TileMap loadMap(Floor floor) {
-        TileMap map = new TileMap();
+        TileMap map = new TileMap(floor.getStart(), floor.getEnd());
         map.load(floor.getFilename());
         for (Object[] entity : floor.getEntities()) {
             switch ((Tile) entity[1]) {
@@ -77,8 +77,10 @@ public class Driver {
 
         classes.pickAClass(driver);;
 
-        TileMap map = loadMap(Floor.ONE);
-        Player player = new Player(map, new Location(9, 2));
+        int currLevel = 0;
+        TileMap[] maps = {loadMap(Floor.ONE), loadMap(Floor.TWO), loadMap(Floor.THREE)};
+        TileMap map = maps[currLevel];
+        Player player = new Player(map, map.start);
 
         map.add(player);
         while (e) {
@@ -103,6 +105,23 @@ public class Driver {
 
                 default:
             }
+            if(player.getLocation().equals(map.end) && currLevel != 2) {
+                map.entities.remove(player);
+                currLevel++;
+                map = maps[currLevel];
+                player = new Player(map, map.start);
+                map.add(player);
+                player.move(0, 1);
+            }
+            if(player.getLocation().equals(map.start) && currLevel != 0) {
+                map.entities.remove(player);
+                currLevel--;
+                map = maps[currLevel];
+                player = new Player(map, map.end);
+                map.add(player);
+                player.move(0, -1);
+            }
+
             //horribly inefficient and just bad design overall
 
             // if (map.entities.size() == 2) { UNLOCK NEW LEVEL

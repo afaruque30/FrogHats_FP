@@ -1,10 +1,19 @@
 package classes;
-/** 
+/**
  * Shop for YoRPG
  */
+import mapentities.*;
 import java.io.*;
 
 public class Shop {
+    enum img {
+      RING ("         "),
+      RELIC("         "),
+      GEM  ("           "),
+      HEART("         "),
+      RABBIT("        "),
+      UN("" ),
+    }
     static InputStreamReader isr = new InputStreamReader( System.in );
     static BufferedReader in = new BufferedReader( isr );
 
@@ -15,14 +24,14 @@ public class Shop {
     static int[] price = {10, 30, 80, 30, 5, 100};
     static int[] boost = {10, 20, 1, 50, 10, 1};
     static boolean[] bought = {false, false, false, false, false, false};
-    
+
     //not the best
     public static int find(String name) {
         for (int i = 0; i < artifacts.length; i++) {
             if (name.equals(artifacts[i])) {
                 return i;
             }
-        } 
+        }
         return -1;
     }
 
@@ -40,14 +49,16 @@ public class Shop {
             e.update(pos);
         }
     }
+    public static void load(Protagonist e) {
 
+    }
     public static void purchase(Protagonist e) {
         while(true) {
             try {
                 listOptions(e);
                 f = in.readLine();
                 System.out.println(f);
-                
+
                 if (f.equals("1")) {
                     buyItem("Ring O Power", e);
                 } else if (f.equals("2")) {
@@ -61,8 +72,8 @@ public class Shop {
                 } else if (f.equals("6")) {
                     buyItem("?????", e);
                 } else if (f.equals("7")) {
-                    
-                    break; 
+
+                    break;
                 } else {
                 System.out.println("Thee hath not picked a vlid option!");
                 }
@@ -70,7 +81,7 @@ public class Shop {
           } catch(Exception m) {
             System.out.println("Thee hath not picked a valid option!");
           }
-            
+
         }
         System.out.println("\nWhy thank you and have a good day!");
         System.out.println("\nNew stats: \n" + e.toString());
@@ -88,6 +99,6 @@ public class Shop {
                              "\n\t6. ????? - ????" +
                              "\n\t7. Exit" +
                              "\n\tBuy something or type 7 to exit!" +
-                             "\n\tYour coins: " + e.getCoins());  
+                             "\n\tYour coins: " + e.getCoins());
     }
 }

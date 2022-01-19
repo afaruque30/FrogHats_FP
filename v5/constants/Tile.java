@@ -7,7 +7,7 @@ public enum Tile {
     DOOR  (BColor.WHITE,  FColor.BLACK,  ' ', 'D'),
 
     RED (null, FColor.RED, ' ', 'R'),
-    
+
     MONSTER,
     SHOP;
 

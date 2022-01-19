@@ -34,13 +34,13 @@ public class Driver {
     public static void check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && o instanceof Enemy) {
-                
+
                 var x = o.getLocation().col;
                 var y = o.getLocation().row;
-                
+
                 thread.interrupt();
                 Battle.perform(protag);
-                
+
 
                 map.remove(o);
                 map.map[y][x] = Tile.keyToTile('Y');
@@ -49,15 +49,15 @@ public class Driver {
 
             }
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
-                
+
                 while (true) {
                     System.out.println("SHOPPING");
                 }
-                
+
 
             }
 
-        }  
+        }
     }
     public static void main(String[] args) {
         var e = true;
@@ -74,12 +74,12 @@ public class Driver {
         Thread thread = new Thread(runner);
         thread.start();
         menu.load(thread);
-        
+
         classes.pickAClass(driver);;
-        
+
         TileMap map = loadMap(Floor.ONE);
         Player player = new Player(map, new Location(9, 2));
-        
+
         map.add(player);
         while (e) {
             map.render();
@@ -100,20 +100,20 @@ public class Driver {
                 case "exit":
                     e = false;
                     break;
-                    
+
                 default:
             }
             //horribly inefficient and just bad design overall
-                      
+
             // if (map.entities.size() == 2) { UNLOCK NEW LEVEL
             //     e = false;
             // }
                     // map.remove(map.entities.get(i));
                     // map.map[4][4] = Tile.keyToTile('Y');
-                
+
             check(driver, player, map, thread, driver.protag);
         }
         // thread.interrupt();
-       
+
     }
 }

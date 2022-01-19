@@ -7,7 +7,7 @@ import java.util.Scanner;
 import constants.Tile;
 
 public class TileMap {
-    private Tile[][] map;
+    public Tile[][] map;
     public ArrayList<MapEntity> entities;
 
     public TileMap() {
@@ -41,6 +41,14 @@ public class TileMap {
 
     public void add(MapEntity entity) {
         this.entities.add(entity);
+    }
+
+    public void remove(MapEntity entity) {
+        for (int i = 0; i < this.entities.size(); i++) {
+            if (entity.getLocation().equals(this.entities.get(i).getLocation())) {
+                entities.remove(i);
+            }
+        }
     }
 
     public boolean inBounds(int row, int col) {

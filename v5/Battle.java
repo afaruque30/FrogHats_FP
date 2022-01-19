@@ -36,7 +36,7 @@ public class Battle implements InputThing {
         }
         TileMap.clearScreen();
         if (ogrek.getHealth() >= 100) {
-            System.out.println("\t\t\t\t\t\tHEALTH: " + ogrek.getHealth());
+            System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
         } else {
             System.out.println("\t\t\t\t\t\tHEALTH:  " + ogrek.getHealth());
         }

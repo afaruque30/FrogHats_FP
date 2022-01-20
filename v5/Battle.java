@@ -20,6 +20,29 @@ public class Battle implements InputThing {
         BANDIT
     }
     public static void load() {
+        System.out.println(//insert art here
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "+
+            "\n                                                            "
+            );
+
         TileMap map = new TileMap();
         map.load("Fight.txt"); // change plz to actual scene or smthing
         map.render(true);

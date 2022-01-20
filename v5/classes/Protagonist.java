@@ -40,7 +40,8 @@ public class Protagonist extends Character{
   }
 
   public void artifactChange(int index) {
-    artifacts[index] = Shop.boost[index];
+    // artifacts[index] = Shop.boost[index];
+    artifacts[index] = 20;
   }
 
 

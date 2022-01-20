@@ -36,4 +36,9 @@ You also gain different attack types with different effects, also based on the c
 On the map, there are icons to represent monsters, entrances to dungeons with different levels, and
 one for a shop. Move into the same tile as the icon to "enter" a new scene with the new map or
 dialogue, with directions and controls to decide what to do in each situation. In the shop, there
-are different artifacts that are tailored to affect different stats. 
+are different artifacts that are tailored to affect different stats. You can check what each item
+does by typing ```info``` in game. There are seven different items you can buy, unlocked after
+killing two monsters.
+
+#### Questing
+

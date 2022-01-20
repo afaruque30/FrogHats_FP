@@ -123,9 +123,9 @@ Problems :: We are not where we want to be, ie. we have to leave out some easter
 
 2022-1-19
 --------------------------------------------------------------
-Abdullah :: map transitions work! (moving from level 1 to 2, and 2 to 1)
+Abdullah :: map transitions work! (moving from level 1 to 2, and 2 to 1), made flowchart
 Jason    :: making the shop work, so that you can buy items, and when you buy it once, it says sold out somehow. 
-Kevin    ::  doing the readme file
+Kevin    ::  doing the readme file, helped make flowchart
 
 Problems :: we need to hurry up
 ==============================================================

@@ -78,26 +78,26 @@ public class Shop {
 
       System.out.println("\u001B[43m     HERE                            ");
       String test = "";
-      for (int i = 0; i < Constants.Screen.MAX_WIDTH_NORMAL; i += 12) {
+      for (int i = 0; i < Constants.Screen.MAX_WIDTH_NORMAL; i += 10) {
         test += "\n";
         for (ShopLoader shop : ShopLoader.values()) {
-            test += loadOptions(e, shop);
+            test += loadOptions(e, shop, i);
             
         }
     }
         System.out.println(test);
     }
-    public static String loadOptions(Protagonist e, ShopLoader shop) {
+    public static String loadOptions(Protagonist e, ShopLoader shop, int i) {
       switch (shop) {
         case RING:
           if (e.artifacts[0] == 0) {
-            return shop.image;
+            return shop.image.substring(i, i + 10);
           }
           break;
         default:
           return " ELMELEO";
-
       }
+      return "";
     }
     public static void purchase(Protagonist e) {
         while(true) {

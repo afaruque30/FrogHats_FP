@@ -1,14 +1,18 @@
 
+import constants.*;
 public enum ShopLoader {
-  RING ("+++++++++++++++" +
-         "---------------" +
-         "++++++++++++++aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
+  RING (  
+         "----------" +
+         "+++-█--█--" +
+         "    █  █  " +
+         "     ██   " +
+         "          "
+         ),
   RELIC("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
   GEM  ("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
   HEART("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
   RABBIT("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-  UN("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-  SOLD("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  UN("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
   public final String image;
 

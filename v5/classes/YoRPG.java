@@ -27,6 +27,8 @@ package classes;
 import java.io.*;
 import java.util.*;
 
+import Shop;
+
 
 public class YoRPG {
 

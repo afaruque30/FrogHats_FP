@@ -90,6 +90,7 @@ public class Battle implements InputThing {
 
 
         }
+        protag.giveCoins(100);
         // if ( !smaug.isAlive() && !pat.isAlive() ) {
         //     Dialogue.bothDie();
         //     try {

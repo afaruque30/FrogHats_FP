@@ -47,7 +47,7 @@ public class Driver {
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
                 thread.interrupt();
                 Shop.purchase(protag);
-                thread.start();
+                
                 return true;
 
             }
@@ -59,6 +59,7 @@ public class Driver {
         var e = true;
         Driver driver = new Driver();
         ClipControl runner = new ClipControl();
+        driver.protag.giveCoins(1000);
         Menu menu = new Menu();
         ClassPrestiges classes = new ClassPrestiges();
         runner.setSong(0);

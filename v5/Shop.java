@@ -120,7 +120,16 @@ public class Shop implements InputThing{
       return shop.image[i];
     }
     public static void purchase(Protagonist e) {
-        loadBeg();
+       
+        ClipControl runner = new ClipControl();
+        runner.setSong(1);
+        try {
+            runner.load();
+        } catch (Exception oaijsfalkdsf) {
+            System.err.println("err");
+        }
+        Thread thread = new Thread(runner);
+        thread.start();
         while(true) {
             try {
                 load(e);
@@ -148,7 +157,6 @@ public class Shop implements InputThing{
                 } else if (f.equals("6")) {
                     buyItem("?????", e);
                 } else if (f.equals("7")) {
-
                     break;
                 } else if (f.equals("info")) {
                     listOptions(e);
@@ -166,8 +174,16 @@ public class Shop implements InputThing{
           }
 
         }
+        
+        
         System.out.println("\nWhy thank you and have a good day!");
         System.out.println("\nNew stats: \n" + e.toString());
+        thread.interrupt();
+        try {
+            Thread.sleep(2000);
+        } catch (Exception p) {
+            //TODO: handle exception
+        }
     }
     public static void listOptions(Protagonist e) {
         System.out.println("\nWelcome to the shop!" +
@@ -184,10 +200,5 @@ public class Shop implements InputThing{
                              "\n\tBuy something or type 7 to exit!" +
                              "\n\tYour coins: " + e.getCoins());
     }
-    public static void main(String[] args) {
-      Shop shop = new Shop();
-      Protagonist protag = new Protagonist();
-      protag.giveCoins(1000);
-      Shop.purchase(protag);
-    }
+    
 }

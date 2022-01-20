@@ -1,5 +1,6 @@
+package music;
+
 import java.io.File;
-import javax.sound.sampled.*;
 import javax.sound.midi.*;
 
 class ClipControl implements Runnable {

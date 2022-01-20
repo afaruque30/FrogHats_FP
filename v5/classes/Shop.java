@@ -1,8 +1,10 @@
+package classes;
 
 /**
  * Shop for YoRPG
  */
 import mapentities.*;
+
 import classes.*;
 import java.io.*;
 

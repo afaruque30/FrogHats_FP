@@ -11,6 +11,7 @@ import mapentities.ShopOwner;
 import mapentities.TileMap;
 import mapentities.*;
 import classes.*;
+import music.*;
 
 public class Driver {
     Protagonist protag = new Protagonist();

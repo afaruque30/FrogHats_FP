@@ -1,18 +1,19 @@
-
+package shop;
 
 /**
  * Shop for YoRPG
  */
 import mapentities.*;
 import music.*;
+import classes.*;
 
 import classes.Protagonist;
 import constants.BColor;
 import constants.FColor;
+import constants.*;
 
 import java.io.*;
 
-import javax.print.DocFlavor.STRING;
 
 public class Shop {
 
@@ -63,8 +64,8 @@ public class Shop {
       thread.start();
       String toptitle = "";
       for (int i = 0; i < 3; i++) {
-        toptitle += "\n";
-        for (int j = 0; j < Constants.Screen.MAX_WIDTH_NORMAL; j++) {
+        toptitle += "\n"; 
+        for (int j = 0; j < 60; j++) {
             if (i == 1 && j == 26) {
                 toptitle += BColor.CYAN + "" + FColor.BLACK + "SHOP" + FColor.WHITE + BColor.BLACK;
                 j += 4;
@@ -75,29 +76,39 @@ public class Shop {
       }     
       TileMap.clearScreen();
       System.out.println(toptitle + BColor.BLACK + FColor.BLACK);
-
-      System.out.println("\u001B[43m     HERE                            ");
       String test = "";
-      for (int i = 0; i < Constants.Screen.MAX_WIDTH_NORMAL; i += 10) {
-        test += "\n";
+      String availabilty = "";
+      for (int i = 0; i < 6; i++) {
+        
         for (ShopLoader shop : ShopLoader.values()) {
             test += loadOptions(e, shop, i);
+            availabilty += available(e, shop, i);
             
         }
+        test += "\n";
     }
-        System.out.println(test);
+        System.out.println(test + BColor.BLACK + "" + FColor.WHITE);
+        System.out.println(availabilty);
+    }
+    public static String available(Protagonist e, ShopLoader shop, int i) {
+        if (i == 0) {
+            switch (shop) {
+                case RING: 
+                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                case RELIC: 
+                    return (e.artifacts[1] == 0) ? "IN STOCK " : "SOLD     ";
+                case GEM: 
+                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                case HEART: 
+                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                case RABBIT: 
+                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+            }
+        }
+        return "";
     }
     public static String loadOptions(Protagonist e, ShopLoader shop, int i) {
-      switch (shop) {
-        case RING:
-          if (e.artifacts[0] == 0) {
-            return shop.image.substring(i, i + 10);
-          }
-          break;
-        default:
-          return " ELMELEO";
-      }
-      return "";
+      return shop.image[i];
     }
     public static void purchase(Protagonist e) {
         while(true) {

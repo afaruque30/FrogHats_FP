@@ -1,22 +1,59 @@
-
+package shop;
 import constants.*;
 public enum ShopLoader {
-  RING (  
-         "----------" +
-         "+++-█--█--" +
-         "    █  █  " +
-         "     ██   " +
+  RING (  new String[] {
+         BColor.WHITE + "" + FColor.RED + 
+         "          ",
+         "    ██    ",
+         "   █  █   ",
+         "   █  █   ",
+         "    ██    ",
          "          "
-         ),
-  RELIC("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-  GEM  ("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-  HEART("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-  RABBIT("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-  UN("ELMODEESCHICKENWINGSSHOPPERBECAUSEILIKETOEATCHICKENNOODLESOUPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  }),
+  RELIC(new String[] {
+    "          ",
+    "    ██    ",
+    "   █  █   ",
+    "   █  █   ",
+    "    ██    ",
+    "          "
+}),
+  GEM  (new String[] {
+    "          ",
+    "    ██    ",
+    "   █  █   ",
+    "   █  █   ",
+    "    ██    ",
+    "          "
+}),
+  HEART(new String[] {
+    "          ",
+    "    ██    ",
+    "   █  █   ",
+    "   █  █   ",
+    "    ██    ",
+    "          "
+}),
+  RABBIT(new String[] {
+    "          ",
+    "    ██    ",
+    "   █  █   ",
+    "   █  █   ",
+    "    ██    ",
+    "          "
+}),
+  UN(new String[] {
+    "          ",
+    "    ██    ",
+    "   █  █   ",
+    "   █  █   ",
+    "    ██    ",
+    "          "
+});
 
-  public final String image;
+  public final String[] image;
 
-  private ShopLoader(String image) {
+  private ShopLoader(String[] image) {
     this.image = image;
   }
 

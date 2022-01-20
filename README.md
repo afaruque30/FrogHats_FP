@@ -24,4 +24,15 @@ to the right twice.
 ### Combat
 You fight an enemy by moving to the same space as an enemy in the game. When you start fighting it,
 you can choose which move to do, which aren't just limited to damaging the enemy. Some moves may
-also heal you or alter your stats.
+also heal you or alter your stats. These depend on the class you choose when you decide to
+specialize in when you progress in the game. 
+
+### Classes
+When you specialize in a class, your stats change to benefit you based on what class you chose.
+You also gain different attack types with different effects, also based on the class. 
+
+### Map Features
+On the map, there are icons to represent monsters, entrances to dungeons with different levels, and
+one for a shop. Move into the same tile as the icon to "enter" a new scene with the new map or
+dialogue, with directions and controls to decide what to do in each situation. In the shop, there
+are different artifacts that are tailored to affect different stats. 

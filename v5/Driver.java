@@ -4,11 +4,6 @@ import java.util.Scanner;
 import classes.Monster;
 import constants.Floor;
 import constants.Tile;
-import mapentities.Enemy;
-import mapentities.Location;
-import mapentities.Player;
-import mapentities.ShopOwner;
-import mapentities.TileMap;
 import mapentities.*;
 import classes.*;
 import music.*;
@@ -32,7 +27,7 @@ public class Driver {
         }
         return map;
     }
-    public static void check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
+    public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && o instanceof Enemy) {
 
@@ -41,24 +36,24 @@ public class Driver {
 
                 thread.interrupt();
                 Battle.perform(protag);
-
+                
 
                 map.remove(o);
                 map.map[y][x] = Tile.keyToTile('Y');
                 map.add(player);
-                break;
+                return true;
 
             }
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
-
-                while (true) {
-                    System.out.println("SHOPPING");
-                }
-
+                thread.interrupt();
+                Shop.purchase(protag);
+                thread.start();
+                return true;
 
             }
 
         }
+        return false;
     }
     public static void main(String[] args) {
         var e = true;
@@ -131,7 +126,18 @@ public class Driver {
                     // map.remove(map.entities.get(i));
                     // map.map[4][4] = Tile.keyToTile('Y');
 
-            check(driver, player, map, thread, driver.protag);
+            if(check(driver, player, map, thread, driver.protag)) {
+                runner = new ClipControl();
+                
+                runner.setSong(0);
+                try {
+                    runner.load();
+                } catch (Exception el) {
+                    //TODO: handle exception
+                }
+                thread = new Thread(runner);
+                thread.start();
+            }
         }
         // thread.interrupt();
 

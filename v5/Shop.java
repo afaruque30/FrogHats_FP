@@ -170,7 +170,7 @@ public class Shop implements InputThing{
         System.out.println("\nNew stats: \n" + e.toString());
     }
     public static void listOptions(Protagonist e) {
-        System.out.println("\nWelcome to Silly Serpent's shop!" +
+        System.out.println("\nWelcome to the shop!" +
                              "\nHere we sell all kinds of goodies" +
                              "\nTo help aid you on your journey!" +
                              "\nOur current inventory of magical items:" +

@@ -1,4 +1,4 @@
-package shop;
+
 
 /**
  * Shop for YoRPG
@@ -15,12 +15,12 @@ import constants.*;
 import java.io.*;
 
 
-public class Shop {
+public class Shop implements InputThing{
 
     static InputStreamReader isr = new InputStreamReader( System.in );
     static BufferedReader in = new BufferedReader( isr );
 
-    static String f;
+    static String o;
     //(Only 1 shop allowed per game!)
     static String[] artifacts = {"Ring o' Power", "Relic of TONKiness", "Gem of Confidence", "Heart of an Eagle", "Rabbit's foot", "?????"};
 
@@ -53,15 +53,7 @@ public class Shop {
         }
     }
     public static void load(Protagonist e) {
-      ClipControl runner = new ClipControl();
-      runner.setSong(1);
-      try {
-          runner.load();
-      } catch (Exception oaijsfalkdsf) {
-          System.err.println("err");
-      }
-      Thread thread = new Thread(runner);
-      thread.start();
+      
       String toptitle = "";
       for (int i = 0; i < 3; i++) {
         toptitle += "\n"; 
@@ -85,24 +77,41 @@ public class Shop {
             availabilty += available(e, shop, i);
             
         }
-        test += "\n";
+        if (i != 5) test += "\n";
+        
     }
         System.out.println(test + BColor.BLACK + "" + FColor.WHITE);
+        System.out.println("============================================================");
         System.out.println(availabilty);
+        System.out.println("============================================================");
+        
+    }
+    public static void loadBeg() {
+        ClipControl runner = new ClipControl();
+        runner.setSong(1);
+        try {
+            runner.load();
+        } catch (Exception oaijsfalkdsf) {
+            System.err.println("err");
+        }
+        Thread thread = new Thread(runner);
+        thread.start();
     }
     public static String available(Protagonist e, ShopLoader shop, int i) {
         if (i == 0) {
             switch (shop) {
                 case RING: 
-                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                    return (e.artifacts[0] == 0) ? " IN STOCK " : "SOLD     ";
                 case RELIC: 
-                    return (e.artifacts[1] == 0) ? "IN STOCK " : "SOLD     ";
+                    return (e.artifacts[1] == 0) ? " IN STOCK " : "SOLD     ";
                 case GEM: 
-                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                     return (e.artifacts[2] == 0) ? " IN STOCK " : "SOLD     "; 
                 case HEART: 
-                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                    return (e.artifacts[3] == 0) ? " IN STOCK " : "SOLD     ";
                 case RABBIT: 
-                    return (e.artifacts[0] == 0) ? "IN STOCK " : "SOLD     ";
+                    return (e.artifacts[4] == 0) ? " IN STOCK " : "SOLD     "; 
+                case UN: 
+                    return (e.artifacts[5] == 0) ? " IN STOCK " : "SOLD     "; 
             }
         }
         return "";
@@ -111,14 +120,23 @@ public class Shop {
       return shop.image[i];
     }
     public static void purchase(Protagonist e) {
+        loadBeg();
         while(true) {
             try {
-                listOptions(e);
-                f = in.readLine();
-                System.out.println(f);
+                load(e);
+                InputThing l = new InputThing() {
+                    @Override
+                    public String receiveInput() {
+                        // TODO Auto-generated method stub
+                        return InputThing.super.receiveInput();
+                    }
+                };
+                System.out.println("Type in 1-6 to buy, or 7 to exit" + " YOUR COINS: " + e.getCoins());
+                var f = l.receiveInput();
+
 
                 if (f.equals("1")) {
-                    buyItem("Ring O Power", e);
+                    buyItem("Ring o' Power", e);
                 } else if (f.equals("2")) {
                     buyItem("Relic of TONKiness", e);
                 } else if (f.equals("3")) {
@@ -132,8 +150,15 @@ public class Shop {
                 } else if (f.equals("7")) {
 
                     break;
+                } else if (f.equals("info")) {
+                    listOptions(e);
                 } else {
                 System.out.println("Thee hath not picked a vlid option!");
+                }
+                try {
+                    Thread.sleep(2000);
+                } catch (Exception p) {
+                    //TODO: handle exception
                 }
 
           } catch(Exception m) {
@@ -162,6 +187,7 @@ public class Shop {
     public static void main(String[] args) {
       Shop shop = new Shop();
       Protagonist protag = new Protagonist();
-      Shop.load(protag);
+      protag.giveCoins(1000);
+      Shop.purchase(protag);
     }
 }

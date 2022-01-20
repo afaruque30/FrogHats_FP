@@ -1,4 +1,4 @@
-package shop;
+
 import constants.*;
 public enum ShopLoader {
   RING (  new String[] {

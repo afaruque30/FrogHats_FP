@@ -7,23 +7,6 @@ pd 8
 Tunleashed YoRPG
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete this instruction block once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
@@ -130,5 +113,13 @@ Kevin    ::  doing the readme file, helped make flowchart
 Problems :: we need to hurry up, BUG IN PROTAG SHOP
 ==============================================================
 
+2022-1-20
+--------------------------------------------------------------
+Abdullah :: changed color of walls, they looked bad before, fixed flowchart
+Jason    :: fixing bug in battleloader, enemy was always bandit.
+Kevin    ::  continued to work on the readme file. Writing up spicy lore.
+
+Problems :: time problem has been alleviated with the extra time granted by sir mykolyk. 
+==============================================================
 
 

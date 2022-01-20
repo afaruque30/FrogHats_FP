@@ -10,7 +10,8 @@ much more content. New content includes:
 * Different unique levels to fight through to unlock the boss fight
 * Sound effects
 * A visual, interactive map
-All in the terminal, so there technically aren't any graphics necessary.
+All in the terminal, so there technically aren't any graphics necessary. To start the game, 
+```java Driver```.
 
 ### The Map and Navigation
 The game map is made of a grid of "tiles", or spaces in the terminal. The terminal contains many
@@ -35,4 +36,9 @@ You also gain different attack types with different effects, also based on the c
 On the map, there are icons to represent monsters, entrances to dungeons with different levels, and
 one for a shop. Move into the same tile as the icon to "enter" a new scene with the new map or
 dialogue, with directions and controls to decide what to do in each situation. In the shop, there
-are different artifacts that are tailored to affect different stats. 
+are different artifacts that are tailored to affect different stats. You can check what each item
+does by typing ```info``` in game. There are seven different items you can buy, unlocked after
+killing two monsters.
+
+#### Questing
+

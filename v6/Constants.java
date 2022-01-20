@@ -13,7 +13,7 @@ public interface Constants {
       public final String SETTINGS_ONE = "SOUND:";
       public final String SETTINGS_TWO = "";
 
-      public final String INSTRUCTIONS = "Welcome to *insert game title here* blah blah blah lore, lore, lore";
+      public final String INSTRUCTIONS = "Welcome to Unleashed YoRPG. You are assigned the task to save ";
     }
 
 }

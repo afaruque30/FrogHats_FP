@@ -1,5 +1,6 @@
 import java.lang.System.Logger.Level;
 import mapentities.*;
+import input.InputThing;
 
 
 public class Menu implements InputThing {

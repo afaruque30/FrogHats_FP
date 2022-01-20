@@ -1,3 +1,4 @@
+package input;
 import java.util.Scanner;
 
 public interface InputThing {

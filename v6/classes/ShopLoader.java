@@ -1,4 +1,4 @@
-
+package classes;
 import constants.*;
 
 public enum ShopLoader {

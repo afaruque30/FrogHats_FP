@@ -35,13 +35,18 @@ public class Driver {
                 var y = o.getLocation().row;
 
                 thread.interrupt();
-                Battle.perform(protag);
+                if (Battle.perform(protag)) {
+                    map.remove(o);
+                    map.map[y][x] = Tile.keyToTile('Y');
+                    map.add(player);
+                    return true;
+                } else {
+                    player.moveTo(new Location(player.getLocation().row + 1, player.getLocation().col));
+                }
+                
                 
 
-                map.remove(o);
-                map.map[y][x] = Tile.keyToTile('Y');
-                map.add(player);
-                return true;
+                
 
             }
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {

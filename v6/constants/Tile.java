@@ -3,7 +3,7 @@ package constants;
 public enum Tile {
     GRASS (BColor.GREEN,  FColor.YELLOW, ' ', 'G'),
     PATH  (BColor.YELLOW, FColor.BLACK,  ' ', 'Y'),
-    WALL  (BColor.WHITE,  FColor.BLUE,   ' ', 'W'),
+    WALL  (BColor.CYAN,  FColor.BLUE,   ' ', 'W'),
     DOOR  (BColor.WHITE,  FColor.BLACK,  ' ', 'D'),
     NEXT  (BColor.PURPLE, FColor.BLACK,  '+', 'P'),
 

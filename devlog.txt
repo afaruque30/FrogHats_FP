@@ -127,5 +127,8 @@ Abdullah :: map transitions work! (moving from level 1 to 2, and 2 to 1), made f
 Jason    :: making the shop work, so that you can buy items, and when you buy it once, it says sold out somehow. 
 Kevin    ::  doing the readme file, helped make flowchart
 
-Problems :: we need to hurry up
+Problems :: we need to hurry up, BUG IN PROTAG SHOP
 ==============================================================
+
+
+

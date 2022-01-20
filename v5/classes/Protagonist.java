@@ -1,6 +1,8 @@
 package classes;
 //coins, will add more features in next update
 
+
+
 public class Protagonist extends Character{
 
   //power, defense, attackrating, health, speed, and special hehe!

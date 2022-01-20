@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 
 import mapentities.*;
+import music.ClipControl;
 import classes.Bandit;
 import classes.Dialogue;
 import classes.Ogre;

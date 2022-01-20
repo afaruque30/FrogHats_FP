@@ -1,12 +1,18 @@
-package classes;
+
 
 /**
  * Shop for YoRPG
  */
 import mapentities.*;
+import music.*;
 
-import classes.*;
+import classes.Protagonist;
+import constants.BColor;
+import constants.FColor;
+
 import java.io.*;
+
+import javax.print.DocFlavor.STRING;
 
 public class Shop {
 
@@ -55,18 +61,41 @@ public class Shop {
       }
       Thread thread = new Thread(runner);
       thread.start();
-      for (ShopLoader shop : ShopLoader.values()) {
-        loadOptions(e, shop);
-        System.out.println(shop.image);
-      }
+      String toptitle = "";
+      for (int i = 0; i < 3; i++) {
+        toptitle += "\n";
+        for (int j = 0; j < Constants.Screen.MAX_WIDTH_NORMAL; j++) {
+            if (i == 1 && j == 26) {
+                toptitle += BColor.CYAN + "" + FColor.BLACK + "SHOP" + FColor.WHITE + BColor.BLACK;
+                j += 4;
+            }
+            toptitle += BColor.CYAN + " " + BColor.BLACK;
+        }
+        
+      }     
+      TileMap.clearScreen();
+      System.out.println(toptitle + BColor.BLACK + FColor.BLACK);
+
+      System.out.println("\u001B[43m     HERE                            ");
+      String test = "";
+      for (int i = 0; i < Constants.Screen.MAX_WIDTH_NORMAL; i += 12) {
+        test += "\n";
+        for (ShopLoader shop : ShopLoader.values()) {
+            test += loadOptions(e, shop);
+            
+        }
     }
-    public static void loadOptions(Protagonist e, ShopLoader shop) {
+        System.out.println(test);
+    }
+    public static String loadOptions(Protagonist e, ShopLoader shop) {
       switch (shop) {
         case RING:
           if (e.artifacts[0] == 0) {
-            System.out.println("ALREADY BOUGHT");
+            return shop.image;
           }
           break;
+        default:
+          return " ELMELEO";
 
       }
     }
@@ -122,6 +151,6 @@ public class Shop {
     public static void main(String[] args) {
       Shop shop = new Shop();
       Protagonist protag = new Protagonist();
-      shop.load(protag);
+      Shop.load(protag);
     }
 }

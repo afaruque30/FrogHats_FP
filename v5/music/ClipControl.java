@@ -3,7 +3,7 @@ package music;
 import java.io.File;
 import javax.sound.midi.*;
 
-class ClipControl implements Runnable {
+public class ClipControl implements Runnable {
     File path = new File("RocketFuel.aiff");
     Sequence sequence;
     Sequencer sequencer;

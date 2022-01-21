@@ -116,7 +116,7 @@ Problems :: we need to hurry up, BUG IN PROTAG SHOP
 2022-1-20
 --------------------------------------------------------------
 Abdullah :: changed color of walls, they looked bad before, fixed flowchart
-Jason    :: fixing bug in battleloader, enemy was always bandit.
+Jason    :: fixing bug in battleloader, enemy was always bandit. Boss Battle created, as well as end screen / endings
 Kevin    ::  continued to work on the readme file. Writing up spicy lore.
 
 Problems :: time problem has been alleviated with the extra time granted by sir mykolyk. 

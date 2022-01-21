@@ -205,7 +205,7 @@ public class BossFight  implements InputThing{
             white += "\n";
         }
         for (int z = 0; z < 100; z++) {
-            for (int o = 0; o < 200; o++) {
+            for (int o = 0; o < 50; o++) {
                 if (z == 95) {
                     win1 += (o == 0) ? FColor.BLACK + "Where Am I?" : "";
                 } else {

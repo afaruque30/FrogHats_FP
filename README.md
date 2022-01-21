@@ -10,8 +10,8 @@ much more content. New content includes:
 * Different unique levels to fight through to unlock the boss fight
 * Sound effects
 * A visual, interactive map
-All in the terminal, so there technically aren't any graphics necessary. To start the game, 
-```java Driver```.
+All in the terminal, so there technically aren't any graphics necessary. To start the game, copmpile and then run
+```java Driver```. The resolution should be 100x55. Please play with your sound on!
 
 ### The Map and Navigation
 The game map is made of a grid of "tiles", or spaces in the terminal. The terminal contains many

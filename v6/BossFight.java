@@ -199,7 +199,7 @@ public class BossFight  implements InputThing{
         String win2 = BColor.WHITE + "";
         String win3 = BColor.WHITE + "";
          for (int z = 0; z < 100; z++) {
-            for (int o = 0; o < 200; o++) {
+            for (int o = 0; o < 50; o++) {
                 white += " ";
             }
             white += "\n";
@@ -216,7 +216,7 @@ public class BossFight  implements InputThing{
             win1 += "\n";
         }
         for (int z = 0; z < 100; z++) {
-            for (int o = 0; o < 200; o++) {
+            for (int o = 0; o < 50; o++) {
                 if (z == 95) {
                     win2 += (o == 0) ? FColor.BLACK + "The Medallion you received starts glowing, and starts fading away, and suddenly you understand" : "";
                 } else {
@@ -240,7 +240,8 @@ public class BossFight  implements InputThing{
         
         
           // CHANGE THIS
-        if (Shop.bought[5]) {
+          // Shop.bought[5]
+        if (true) {
             thread.interrupt();
             try {
                 Thread.sleep(4000);
@@ -277,6 +278,7 @@ public class BossFight  implements InputThing{
               System.out.flush();
           return true;
         }
+        TileMap.clearScreen();
         thread.interrupt();
         return false;
        

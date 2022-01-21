@@ -11,6 +11,6 @@ public class Npc extends MapEntity {
     }
 
     public String render() {
-        return BColor.YELLOW.toString() + color.toString() + display;
+        return BColor.WHITE.toString() + color.toString() + display;
     }
 }

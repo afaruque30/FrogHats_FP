@@ -85,7 +85,7 @@ public class Shop implements InputThing{
         System.out.println(test + BColor.BLACK + "" + FColor.WHITE);
         System.out.println("============================================================");
         System.out.println(availabilty);
-        System.out.println("============================================================");
+        System.out.println("============================================================" + BColor.BLACK);
         
     }
     public static void loadBeg() {
@@ -142,7 +142,7 @@ public class Shop implements InputThing{
                         return InputThing.super.receiveInput();
                     }
                 };
-                System.out.println("Type in 1-6 to buy, or 7 to exit" + " YOUR COINS: " + e.getCoins());
+                System.out.println(BColor.BLACK + "Type in 1-6 to buy, or 7 to exit" + " YOUR COINS: " + e.getCoins());
                 var f = l.receiveInput();
 
 

@@ -6,6 +6,8 @@ package classes;
 public class Protagonist extends Character{
 
   //power, defense, attackrating, health, speed, and special hehe!
+  private int killCount = 0;
+
   public int[] artifacts = new int[6];
   public Protagonist() {
     super();
@@ -37,6 +39,12 @@ public class Protagonist extends Character{
 
 
 
+  }
+  public void kill() {
+    this.killCount++;
+  }
+  public int getKills() {
+    return this.killCount;
   }
 
   public void artifactChange(int index) {

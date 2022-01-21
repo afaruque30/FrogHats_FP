@@ -27,7 +27,8 @@ public class Driver {
                     map.add(new ShopOwner(map, (Location) entity[0]));
                     break;
                 case NPC:
-                    map.add(new NPC(map, (Location) entity[0]));
+                    map.add(new Npc(map, (Location) entity[0]));
+                    break;
                 default:
             }
         }
@@ -36,6 +37,9 @@ public class Driver {
 
     public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
+            if (player.getLocation().equals(o.getLocation()) && player.getLocation().row == 10 && player.getLocation().col == 53 && (o instanceof Npc)) {
+                
+            }
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
                 thread.interrupt();
                if (BossFight.bossFight(protag)) {

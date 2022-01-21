@@ -129,6 +129,7 @@ public class Battle implements InputThing {
             if (protag.getLevel() == 5 ) {
             //   this.prestige();
             }
+            protag.kill();
         }
         try {
             Thread.sleep(2000);

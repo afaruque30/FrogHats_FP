@@ -9,6 +9,7 @@ import classes.*;
 import music.*;
 
 public class Driver {
+    boolean e = true;
     Protagonist protag = new Protagonist();
 
     public static TileMap loadMap(Floor floor) {
@@ -34,8 +35,15 @@ public class Driver {
     public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
+                thread.interrupt();
                if (BossFight.bossFight(protag)) {
-                   
+                   EndScreen.win();
+                   driver.e = false;
+                   return false;
+               } else {
+                    EndScreen.lose();
+                    driver.e = false;
+                    return false;
                }
                 //BOSSFIGHT
                //if FALSE GO TO END SCREEN
@@ -54,6 +62,7 @@ public class Driver {
                     return true;
                 } else {
                     player.moveTo(new Location(player.getLocation().row + 1, player.getLocation().col));
+                    return true;
                 }
                 
                 
@@ -65,6 +74,8 @@ public class Driver {
             
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
                 thread.interrupt();
+                protag.giveCoins(100000);
+                protag.increaseLevel(10000, 1000000);
                 Shop.purchase(protag);
                 
                 return true;
@@ -78,7 +89,8 @@ public class Driver {
         var e = true;
         Driver driver = new Driver();
         ClipControl runner = new ClipControl();
-        driver.protag.giveCoins(1000);
+        
+        
         Menu menu = new Menu();
         ClassPrestiges classes = new ClassPrestiges();
         runner.setSong(0);

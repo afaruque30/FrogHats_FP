@@ -238,42 +238,43 @@ public class BossFight  implements InputThing{
             win3 += "\n";
         }
         
-        try {
-            Thread.sleep(4000);
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-        TileMap.clearScreen();
-        System.out.println(white);
-        try {
-            Thread.sleep(4000);
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-        System.out.println(win1);
-        try {
-            Thread.sleep(4000);
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-        System.out.println(win2);
-        try {
-            Thread.sleep(4000);
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-        System.out.println(win3);
-        try {
-            Thread.sleep(4000);
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-        System.out.println(BColor.BLACK + "" + FColor.WHITE);
-          System.out.print("\033[H\033[2J");
-          System.out.flush();
+        
           // CHANGE THIS
         if (Shop.bought[5]) {
             thread.interrupt();
+            try {
+                Thread.sleep(4000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            TileMap.clearScreen();
+            System.out.println(white);
+            try {
+                Thread.sleep(4000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            System.out.println(win1);
+            try {
+                Thread.sleep(4000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            System.out.println(win2);
+            try {
+                Thread.sleep(4000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            System.out.println(win3);
+            try {
+                Thread.sleep(4000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            System.out.println(BColor.BLACK + "" + FColor.WHITE);
+              System.out.print("\033[H\033[2J");
+              System.out.flush();
           return true;
         }
         thread.interrupt();

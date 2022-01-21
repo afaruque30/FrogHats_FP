@@ -108,20 +108,15 @@ public class Driver {
         int currLevel = 0;
         TileMap[] maps = {loadMap(Floor.ONE), loadMap(Floor.TWO), loadMap(Floor.THREE)};
         TileMap map = maps[currLevel];
-        thread.interrupt();
+        
         Player player = new Player(map, map.start);
-        runner = new ClipControl();
-                
-                runner.setSong(6);
-                try {
-                    runner.load();
-                } catch (Exception el) {
-                    //TODO: handle exception
-                }
-                thread = new Thread(runner);
-                thread.start();
+        
+        
+        
         map.add(player);
+        
         while (e) {
+            
             map.render();
             Scanner in = new Scanner(System.in);
             switch (in.nextLine()) {

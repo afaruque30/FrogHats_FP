@@ -103,6 +103,9 @@ public class Character {
   public void setName(String name) {
     this.name = name;
   }
+  public void setHealth(int num) {
+    this.health = num;
+  }
   public String getAttackState() {
     return this.attackState;
   }

@@ -6,6 +6,8 @@ import classes.Ogre;
 import classes.Protagonist;
 import classes.Monster;
 import classes.Worg;
+import constants.BColor;
+import constants.FColor;
 import classes.*;
 import input.InputThing;
 
@@ -38,19 +40,28 @@ public class BossFight  implements InputThing{
                 return InputThing.super.receiveInput();
             }
         };
-      
+        ClipControl runner = new ClipControl();
+        runner.setSong(3);
+        try {
+            runner.load();
+        } catch (Exception e) {
+            System.err.println("err");
+        }
+        Thread thread = new Thread(runner);
+        thread.start();
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("*A mysterious voice starts speaking*");
         System.out.println("It seems that you have reached my lair. I would applaud you if you weren't going to die soon!");
         System.out.println("Those puny monsters are NOTHING. Feel the wrath of my pwer and tremble!");
-        System.out.println("Your life is now over. Guards KILL THIS HERO!\n(Enter to Continue)");
+        System.out.println("Your life is now over. Guards KILL THIS HERO!\n(continue (or anything) to Continue)");
         delayThing = input.receiveInput();
         
         Guard guard1 = new Guard();
         Guard guard2 = new Guard();
         Boss boss = new Boss();
         while(guard1.isAlive() && protag.isAlive()) {
+            refresh(protag, guard1);
           for(;;) {
             try {
               Dialogue.listOptions(protag);
@@ -70,8 +81,13 @@ public class BossFight  implements InputThing{
           
           protag.setAttackType(protag.attackTypes[i - 1]);
           
+          System.out.println(Dialogue.dealDamage(protag, guard1));
+          try {
+            Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
           
-          Dialogue.dealDamage(protag, guard1);
           
         }
         if (!guard1.isAlive()) {
@@ -85,10 +101,12 @@ public class BossFight  implements InputThing{
     
         } else {
           System.out.println("Twas a valiant attempt! Game over");
+          thread.interrupt();
           return false;
         }
         while(guard2.isAlive() && protag.isAlive()) {
           while(true) {
+              refresh(protag, guard2);
             try {
               Dialogue.listOptions(protag);
               
@@ -107,8 +125,13 @@ public class BossFight  implements InputThing{
           
           protag.setAttackType(protag.attackTypes[i - 1]);
           
+          System.out.println(Dialogue.dealDamage(protag, guard2));
           
-          Dialogue.dealDamage(protag, guard2);
+          try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
           
         }
         if (!guard2.isAlive()) {
@@ -122,6 +145,7 @@ public class BossFight  implements InputThing{
     
         } else {
           System.out.println("Twas a valiant attempt!");
+          thread.interrupt();
           return false;
         }
         System.out.println("I am much powerful than my guards. Don't think this will be easy.");
@@ -146,12 +170,18 @@ public class BossFight  implements InputThing{
           
           protag.setAttackType(protag.attackTypes[i - 1]);
           
+          System.out.println(Dialogue.dealDamage(protag, boss));
           
-          Dialogue.dealDamage(protag, boss);
+          try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
           
         }
         if (boss.isAlive()) {
           System.out.println("Twas a valiant attempt!");
+          thread.interrupt();
           return false;
         }
     
@@ -162,34 +192,102 @@ public class BossFight  implements InputThing{
                              "\nGoodbye Hero. Boss utters this with his last breath and closes his eyes.");    
                              
         System.out.println("Boss performs his final attack: Self Destruction. Everything goes white.");
-        System.out.println("Press 1 to continue");
+        thread.interrupt();
         
-        for (;;) {
-          try {
-            i = Integer.parseInt( input.receiveInput() );
-            if (i != 1) {
-              System.out.println("Tis just one button... Try again");
-            } else {
-              break;
+        String white = BColor.WHITE + "";
+        String win1 = BColor.WHITE + "";
+        String win2 = BColor.WHITE + "";
+        String win3 = BColor.WHITE + "";
+         for (int z = 0; z < 100; z++) {
+            for (int o = 0; o < 200; o++) {
+                white += " ";
             }
-    
-          } catch (Exception o) {
-            System.out.println("Tis just one button... Try again");
-          }
+            white += "\n";
         }
+        for (int z = 0; z < 100; z++) {
+            for (int o = 0; o < 200; o++) {
+                if (z == 95) {
+                    win1 += (o == 0) ? FColor.BLACK + "Where Am I?" : "";
+                } else {
+                    win1 += " ";
+                }
+                
+            }
+            win1 += "\n";
+        }
+        for (int z = 0; z < 100; z++) {
+            for (int o = 0; o < 200; o++) {
+                if (z == 95) {
+                    win2 += (o == 0) ? FColor.BLACK + "The Medallion you received starts glowing, and starts fading away, and suddenly you understand" : "";
+                } else {
+                    win2 += " ";
+                }
+                
+            }
+            win2 += "\n";
+        }
+        for (int z = 0; z < 100; z++) {
+            for (int o = 0; o < 200; o++) {
+                if (z == 95) {
+                    win3 += (o == 0) ? FColor.BLACK + "So, the medallion saved my life - you think this as you are brought back into reality" : "";
+                } else {
+                    win3 += " ";
+                }
+                
+            }
+            win3 += "\n";
+        }
+        
+        try {
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        TileMap.clearScreen();
+        System.out.println(white);
+        try {
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        System.out.println(win1);
+        try {
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        System.out.println(win2);
+        try {
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        System.out.println(win3);
+        try {
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        System.out.println(BColor.BLACK + "" + FColor.WHITE);
           System.out.print("\033[H\033[2J");
           System.out.flush();
           // CHANGE THIS
         if (Shop.bought[5]) {
+            thread.interrupt();
           return true;
         }
-    
+        thread.interrupt();
         return false;
+       
         
     
       }
       public static void main(String[] args) {
           Protagonist protag = new Protagonist();
-          BossFight.bossFight(protag);
+          protag.setHealth(10000);
+          protag.increaseLevel(100, 1000000);
+          bossFight(protag);
+         
+       
       }
 }

@@ -26,6 +26,8 @@ public class Driver {
                 case SHOP:
                     map.add(new ShopOwner(map, (Location) entity[0]));
                     break;
+                case NPC:
+                    map.add(new NPC(map, (Location) entity[0]));
                 default:
             }
         }

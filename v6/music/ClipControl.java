@@ -33,6 +33,9 @@ public class ClipControl implements Runnable {
             case 4:
                 path = new File("Heavenly.mid");
                 break;
+            case 5:
+                path = new File("Lose.mid");
+                break;
         }
     }
     public void load() throws Exception {

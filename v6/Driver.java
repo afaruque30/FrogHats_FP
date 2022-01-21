@@ -34,7 +34,10 @@ public class Driver {
     public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
-               //BOSSFIGHT
+               if (BossFight.bossFight(protag)) {
+                   
+               }
+                //BOSSFIGHT
                //if FALSE GO TO END SCREEN
                // if TRUE GO TO END SCREEN
             }

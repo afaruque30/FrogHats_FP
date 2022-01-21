@@ -2,6 +2,7 @@ package constants;
 
 import classes.Monster;
 import classes.Ogre;
+import classes.Boss;
 import mapentities.Location;
 
 public enum Floor {
@@ -23,7 +24,7 @@ public enum Floor {
     THREE("Floor3.txt", new Location(9, 0), new Location(0, 0), new Object[][] {
         {new Location(14, 37), Tile.MONSTER, new Monster[] {new Ogre()}},
         {new Location( 5, 37), Tile.MONSTER, new Monster[] {new Ogre()}},
-        {new Location( 9, 49), Tile.MONSTER, new Monster[] {new Ogre()}}  // supposed to be boss
+        {new Location( 9, 49), Tile.BOSS, new Monster[] {new Boss()}}  // supposed to be boss
     });
 
     private String filename;

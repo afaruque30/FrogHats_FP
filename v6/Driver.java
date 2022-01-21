@@ -19,6 +19,9 @@ public class Driver {
                 case MONSTER:
                     map.add(new Enemy(map, (Location) entity[0], (Monster[]) entity[2]));
                     break;
+                case BOSS:
+                    map.add(new EnemyBoss(map, (Location) entity[0], (Monster[]) entity[2]));
+                    break;
                 case SHOP:
                     map.add(new ShopOwner(map, (Location) entity[0]));
                     break;
@@ -27,8 +30,12 @@ public class Driver {
         }
         return map;
     }
+
     public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
+            if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
+               
+            }
             if (player.getLocation().equals(o.getLocation()) && o instanceof Enemy) {
 
                 var x = o.getLocation().col;
@@ -49,6 +56,8 @@ public class Driver {
                 
 
             }
+              //do this
+            
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
                 thread.interrupt();
                 Shop.purchase(protag);
@@ -101,6 +110,23 @@ public class Driver {
                 case "d":
                     player.move(0, 1);
                     break;
+                case "t":
+                    player.move(-1, 0);
+                    player.move(-1, 0);
+                    break;
+                case "f":
+                    player.move(0, -1);
+                    player.move(0, -1);
+                    break;
+                case "g":
+                    player.move(1, 0);
+                    player.move(1, 0);
+                    break;
+                case "h":
+                    player.move(0, 1);
+                    player.move(0, 1);
+                    break;
+                
                 case "exit":
                     e = false;
                     break;
@@ -123,14 +149,6 @@ public class Driver {
                 map.add(player);
                 player.move(0, -1);
             }
-
-            //horribly inefficient and just bad design overall
-
-            // if (map.entities.size() == 2) { UNLOCK NEW LEVEL
-            //     e = false;
-            // }
-                    // map.remove(map.entities.get(i));
-                    // map.map[4][4] = Tile.keyToTile('Y');
 
             if(check(driver, player, map, thread, driver.protag)) {
                 runner = new ClipControl();

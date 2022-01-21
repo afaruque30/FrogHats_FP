@@ -10,6 +10,7 @@ public enum Tile {
     RED (null, FColor.RED, ' ', 'R'),
 
     MONSTER,
+    BOSS,
     SHOP;
 
     private final BColor backgroundColor;

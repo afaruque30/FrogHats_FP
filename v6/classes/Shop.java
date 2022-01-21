@@ -28,7 +28,7 @@ public class Shop implements InputThing{
 
     static int[] price = {10, 30, 80, 30, 5, 100};
     static int[] boost = {10, 20, 1, 50, 10, 1};
-    static boolean[] bought = {false, false, false, false, false, false};
+    public static boolean[] bought = {false, false, false, false, false, false};
 
     //not the best
     public static int find(String name) {

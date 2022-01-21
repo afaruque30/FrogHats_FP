@@ -12,6 +12,7 @@ public enum Floor {
         {new Location(18, 55), Tile.MONSTER, new Monster[] {new Ogre()}},
         {new Location( 4, 46), Tile.MONSTER, new Monster[] {new Ogre()}},
         {new Location( 8, 47), Tile.MONSTER, new Monster[] {new Ogre()}},
+        {new Location(16, 44), Tile.NPC, null},
         {new Location(17, 41), Tile.SHOP,    null}
     }),
     TWO("Floor2.txt", new Location(4, 0), new Location(19, 42), new Object[][] {

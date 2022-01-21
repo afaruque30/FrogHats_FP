@@ -11,6 +11,7 @@ public enum Tile {
 
     MONSTER,
     BOSS,
+    NPC,
     SHOP;
 
     private final BColor backgroundColor;

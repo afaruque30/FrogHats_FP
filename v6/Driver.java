@@ -29,6 +29,12 @@ public class Driver {
                 case NPC:
                     map.add(new Npc(map, (Location) entity[0]));
                     break;
+                case APPLE:
+                    map.add(new Apple(map, (Location) entity[0]));
+                    break;
+                case GUARD:
+                    map.add(new GoodGuard(map, (Location) entity[0]));
+                    break;
                 default:
             }
         }
@@ -37,10 +43,51 @@ public class Driver {
 
     public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
+            if (player.getLocation().equals(o.getLocation()) && (o instanceof GoodGuard)) {
+                if (NpcQuest.guardInteraction(protag)) {
+                    map.remove(o);
+                    map.map[player.getLocation().row][player.getLocation().col] = Tile.keyToTile('G');
+                    map.add(player);
+                }
+                player.moveTo(new Location(player.getLocation().row, player.getLocation().col - 1));
+                return false;
+            }
+            if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Apple)) {
+                map.remove(o);
+                map.map[player.getLocation().row][player.getLocation().col] = Tile.keyToTile('G');
+                map.add(player);
+                protag.foundApple();
+                System.out.println("Hey! You found an apple, wonder what those do..." + "\nTotal Apples: " + protag.apples);
+                try {
+                    Thread.sleep(2000);
+                } catch (Exception e) {
+                    //TODO: handle exception
+                }
+                return false;
+            }
             if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 10 && player.getLocation().col == 53) {
                 TileMap.clearScreen();
                 map.render();
                 NpcQuest.killQuest(protag);
+                return false;
+            }
+            if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 13 && player.getLocation().col == 19) {
+                TileMap.clearScreen();
+                map.render();
+                NpcQuest.artifactQuest(protag);
+                return false;
+            }
+            if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 18 && player.getLocation().col == 1) {
+                TileMap.clearScreen();
+                map.render();
+                NpcQuest.hutMan(protag);
+                player.moveTo(new Location(player.getLocation().row - 1, player.getLocation().col));
+                return false;
+            }
+            if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 6 && player.getLocation().col == 9) {
+                TileMap.clearScreen();
+                map.render();
+                NpcQuest.appleQuest(protag);
                 return false;
             }
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
@@ -68,6 +115,12 @@ public class Driver {
                     map.remove(o);
                     map.map[y][x] = Tile.keyToTile('Y');
                     map.add(player);
+                    protag.kill();
+                    
+                    if (protag.getLevel() == 1) {
+                        ClassPrestiges.prestige(driver);
+                        protag.kill();
+                    }
                     return true;
                 } else {
                     player.moveTo(new Location(player.getLocation().row + 1, player.getLocation().col));
@@ -82,10 +135,23 @@ public class Driver {
               //do this
             
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player) && !(o instanceof Npc)) {
-                thread.interrupt();
-                protag.giveCoins(100000);
-                protag.increaseLevel(10000, 1000000);
-                Shop.purchase(protag);
+                if (protag.getKills() >= 2) {
+                    thread.interrupt();
+                    protag.giveCoins(100000);
+                    protag.increaseLevel(10000, 1000000);
+                    Shop.purchase(protag);
+                } else {
+                    
+                    System.out.println("Kill some mobs before accessing please!");
+                    
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        //TODO: handle exception
+                    }
+                    player.moveTo(new Location(player.getLocation().row - 1, player.getLocation().col));
+                    return false;
+                }
                 
                 return true;
 
@@ -97,12 +163,30 @@ public class Driver {
     public static void main(String[] args) {
         var e = true;
         Driver driver = new Driver();
-        ClipControl runner = new ClipControl();
+
+
+        ClipControl runner2 = new ClipControl();
         
         
         Menu menu = new Menu();
         ClassPrestiges classes = new ClassPrestiges();
-        runner.setSong(0);
+        runner2.setSong(0);
+        try {
+            runner2.load();
+        } catch (Exception el) {
+            //TODO: handle exception
+        }
+        Thread thread1 = new Thread(runner2);
+        thread1.start();
+        menu.load(thread1);
+
+        classes.pickAClass(driver, thread1);
+        
+
+        // pregame music
+
+        ClipControl runner = new ClipControl();
+        runner.setSong(6);
         try {
             runner.load();
         } catch (Exception el) {
@@ -110,9 +194,8 @@ public class Driver {
         }
         Thread thread = new Thread(runner);
         thread.start();
-        menu.load(thread);
 
-        classes.pickAClass(driver);;
+        
 
         int currLevel = 0;
         TileMap[] maps = {loadMap(Floor.ONE), loadMap(Floor.TWO), loadMap(Floor.THREE)};
@@ -124,6 +207,7 @@ public class Driver {
         
         map.add(player);
         
+
         while (e) {
             
             map.render();
@@ -164,7 +248,14 @@ public class Driver {
 
                 default:
             }
-            if(player.getLocation().equals(map.end) && currLevel != 2) {
+            if (player.getLocation().equals(map.end) && driver.protag.items[2] == 0 && currLevel == 1) {
+                System.out.println("Hmm, you can't advance just yet!");
+                try {
+                    Thread.sleep(2000);
+                } catch (Exception o) {
+                    //TODO: handle exception
+                }
+            } else if(player.getLocation().equals(map.end) && currLevel != 2) {
                 map.entities.remove(player);
                 currLevel++;
                 map = maps[currLevel];

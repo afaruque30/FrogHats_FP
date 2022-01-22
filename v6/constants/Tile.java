@@ -10,7 +10,9 @@ public enum Tile {
     RED (null, FColor.RED, ' ', 'R'),
 
     MONSTER,
+    APPLE,
     BOSS,
+    GUARD,
     NPC,
     SHOP;
 

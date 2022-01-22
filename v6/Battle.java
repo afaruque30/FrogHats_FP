@@ -90,10 +90,10 @@ public class Battle implements InputThing {
                 try {
                   Dialogue.listOptions(protag);
                   String o = input.receiveInput();
-                
+                  if (o.equals("exit")) {thread1.interrupt(); return false;}
                   i = Integer.parseInt( o );
 
-                  if (o.equals("exit")) {thread1.interrupt(); return false;}
+                  
                   if (i < (protag.attackTypes.length + 1) && i > 0) {
                     break;
                   } else {
@@ -148,8 +148,9 @@ public class Battle implements InputThing {
         }
         else if ( !ogrek.isAlive() ) {
             int f = 0;
+            TileMap.clearScreen();
             Dialogue.beastDies();
-            // protag.attackRating += 0.05;
+            protag.attackRating += 0.05;
             while (true) {
               try {
                 f = Integer.parseInt(input.receiveInput());
@@ -168,10 +169,8 @@ public class Battle implements InputThing {
             } else {
               protag.increaseLevel(0, 2);
             }
-            if (protag.getLevel() == 5 ) {
-            //   this.prestige();
-            }
-            protag.kill();
+            
+           
         }
         try {
             Thread.sleep(2000);

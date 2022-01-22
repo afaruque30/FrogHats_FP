@@ -241,7 +241,7 @@ public class BossFight  implements InputThing{
         
           // CHANGE THIS
           // Shop.bought[5]
-        if (true) {
+        if (Shop.bought[5] && protag.items[4] == 1) {
             thread.interrupt();
             try {
                 Thread.sleep(4000);

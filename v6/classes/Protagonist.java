@@ -6,13 +6,16 @@ package classes;
 public class Protagonist extends Character{
 
   //power, defense, attackrating, health, speed, and special hehe!
-  private int killCount = 0;
+  public int killCount = 0;
 
-  //lost map, apples, artifact
-  public int[] items = {0, 0, 0, 0};
+  // artifact, lost map, key, book, ??? from sage
+  public int[] items = {0, 0, 0, 0, 0};
 
-  //killQuest
+  //killQuest, appleQuest, elena, hut
   public int[] visits = {0, 0, 0, 0};
+
+  //appleQuest
+  public int apples = 0;
 
   public int[] artifacts = new int[6];
   public Protagonist() {
@@ -51,6 +54,9 @@ public class Protagonist extends Character{
   }
   public int getKills() {
     return this.killCount;
+  }
+  public void foundApple() {
+    this.apples++;
   }
 
   public void artifactChange(int index) {

@@ -53,7 +53,7 @@ public class Menu implements InputThing {
                     update();
                     input = receiveInput();
                     
-                    if (input.equals("1")) {startGame = true; thread.interrupt();}
+                    if (input.equals("1")) {startGame = true;}
                     if (input.equals("2")) level = LEVEL.SETTINGS;
                     if (input.equals("3")) level = LEVEL.INSTRUCTIONS;
                     break;

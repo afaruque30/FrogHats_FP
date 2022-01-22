@@ -103,17 +103,17 @@ public class Shop implements InputThing{
         if (i == 0) {
             switch (shop) {
                 case RING: 
-                    return (e.artifacts[0] == 0) ? " IN STOCK " : "SOLD     ";
+                    return (e.artifacts[0] == 0) ? " IN STOCK " : "   SOLD  ";
                 case RELIC: 
-                    return (e.artifacts[1] == 0) ? " IN STOCK " : "SOLD     ";
+                    return (e.artifacts[1] == 0) ? " IN STOCK " : "   SOLD  ";
                 case GEM: 
-                     return (e.artifacts[2] == 0) ? " IN STOCK " : "SOLD     "; 
+                    return (e.artifacts[2] == 0) ? " IN STOCK " : "   SOLD  "; 
                 case HEART: 
-                    return (e.artifacts[3] == 0) ? " IN STOCK " : "SOLD     ";
+                    return (e.artifacts[3] == 0) ? " IN STOCK " : "   SOLD  ";
                 case RABBIT: 
-                    return (e.artifacts[4] == 0) ? " IN STOCK " : "SOLD     "; 
+                    return (e.artifacts[4] == 0) ? " IN STOCK " : "   SOLD  "; 
                 case UN: 
-                    return (e.artifacts[5] == 0) ? " IN STOCK " : "SOLD     "; 
+                    return (e.artifacts[5] == 0) ? " IN STOCK " : "   SOLD  "; 
             }
         }
         return "";
@@ -122,70 +122,71 @@ public class Shop implements InputThing{
       return shop.image[i];
     }
     public static void purchase(Protagonist e) {
-       
-        ClipControl runner = new ClipControl();
-        runner.setSong(1);
-        try {
-            runner.load();
-        } catch (Exception oaijsfalkdsf) {
-            System.err.println("err");
-        }
-        Thread thread = new Thread(runner);
-        thread.start();
-        while(true) {
+        
+            ClipControl runner = new ClipControl();
+            runner.setSong(1);
             try {
-                load(e);
-                InputThing l = new InputThing() {
-                    @Override
-                    public String receiveInput() {
-                        // TODO Auto-generated method stub
-                        return InputThing.super.receiveInput();
-                    }
-                };
-                System.out.println(BColor.BLACK + "Type in 1-6 to buy, or 7 to exit" + " YOUR COINS: " + e.getCoins());
-                var f = l.receiveInput();
-
-
-                if (f.equals("1")) {
-                    buyItem("Ring o' Power", e);
-                } else if (f.equals("2")) {
-                    buyItem("Relic of TONKiness", e);
-                } else if (f.equals("3")) {
-                    buyItem("Gem of Confidence", e);
-                } else if (f.equals("4")) {
-                    buyItem("Heart of an Eagle", e);
-                } else if (f.equals("5")) {
-                    buyItem("Rabbit's foot", e);
-                } else if (f.equals("6")) {
-                    buyItem("?????", e);
-                } else if (f.equals("7")) {
-                    break;
-                } else if (f.equals("info")) {
-                    listOptions(e);
-                } else {
-                System.out.println("Thee hath not picked a vlid option!");
-                }
+                runner.load();
+            } catch (Exception oaijsfalkdsf) {
+                System.err.println("err");
+            }
+            Thread thread = new Thread(runner);
+            thread.start();
+            while(true) {
                 try {
-                    Thread.sleep(2000);
-                } catch (Exception p) {
-                    //TODO: handle exception
-                }
+                    load(e);
+                    InputThing l = new InputThing() {
+                        @Override
+                        public String receiveInput() {
+                            // TODO Auto-generated method stub
+                            return InputThing.super.receiveInput();
+                        }
+                    };
+                    System.out.println(BColor.BLACK + "Type in 1-6 to buy, or 7 to exit" + " YOUR COINS: " + e.getCoins());
+                    var f = l.receiveInput();
 
-          } catch(Exception m) {
-            System.out.println("Thee hath not picked a valid option!");
-          }
 
-        }
+                    if (f.equals("1")) {
+                        buyItem("Ring o' Power", e);
+                    } else if (f.equals("2")) {
+                        buyItem("Relic of TONKiness", e);
+                    } else if (f.equals("3")) {
+                        buyItem("Gem of Confidence", e);
+                    } else if (f.equals("4")) {
+                        buyItem("Heart of an Eagle", e);
+                    } else if (f.equals("5")) {
+                        buyItem("Rabbit's foot", e);
+                    } else if (f.equals("6")) {
+                        buyItem("?????", e);
+                    } else if (f.equals("7")) {
+                        break;
+                    } else if (f.equals("info")) {
+                        listOptions(e);
+                    } else {
+                    System.out.println("Thee hath not picked a vlid option!");
+                    }
+                    try {
+                        Thread.sleep(2000);
+                    } catch (Exception p) {
+                        //TODO: handle exception
+                    }
+
+            } catch(Exception m) {
+                System.out.println("Thee hath not picked a valid option!");
+            }
+
+            }
+            
+            
+            System.out.println("\nWhy thank you and have a good day!");
+            System.out.println("\nNew stats: \n" + e.toString());
+            thread.interrupt();
+            try {
+                Thread.sleep(2000);
+            } catch (Exception p) {
+                //TODO: handle exception
+            }
         
-        
-        System.out.println("\nWhy thank you and have a good day!");
-        System.out.println("\nNew stats: \n" + e.toString());
-        thread.interrupt();
-        try {
-            Thread.sleep(2000);
-        } catch (Exception p) {
-            //TODO: handle exception
-        }
     }
     public static void listOptions(Protagonist e) {
         System.out.println("\nWelcome to the shop!" +

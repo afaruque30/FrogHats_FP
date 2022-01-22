@@ -8,7 +8,7 @@ public class Character {
   protected int strength;
   protected int defense;
   protected int speed;
-  protected double attackRating;
+  public double attackRating;
   protected String attackState = "";
 
   protected String name = "";
@@ -21,7 +21,7 @@ public class Character {
   protected String test = "";
   protected String attackMiss = "";
 
-  final static String[] classTypes = { "Archer", "Sniper", "Gunner", "Tank", "Tonk", "Fortress", "Wizard", "Arcane",
+  public final static String[] classTypes = { "Archer", "Sniper", "Gunner", "Tank", "Tonk", "Fortress", "Wizard", "Arcane",
       "Necromancer", "Swordsman", "Paladin", "Barbarian" };
 
   public String[] attackTypes = { "Bash", "RNGesus Bash" };

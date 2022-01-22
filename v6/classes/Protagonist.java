@@ -8,6 +8,12 @@ public class Protagonist extends Character{
   //power, defense, attackrating, health, speed, and special hehe!
   private int killCount = 0;
 
+  //lost map, apples, artifact
+  public int[] items = {0, 0, 0, 0};
+
+  //killQuest
+  public int[] visits = {0, 0, 0, 0};
+
   public int[] artifacts = new int[6];
   public Protagonist() {
     super();

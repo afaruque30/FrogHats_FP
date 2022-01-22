@@ -37,8 +37,11 @@ public class Driver {
 
     public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
-            if (player.getLocation().equals(o.getLocation()) && player.getLocation().row == 10 && player.getLocation().col == 53 && (o instanceof Npc)) {
-                
+            if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 10 && player.getLocation().col == 53) {
+                TileMap.clearScreen();
+                map.render();
+                NpcQuest.killQuest(protag);
+                return false;
             }
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
                 thread.interrupt();
@@ -78,7 +81,7 @@ public class Driver {
             }
               //do this
             
-            if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player)) {
+            if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player) && !(o instanceof Npc)) {
                 thread.interrupt();
                 protag.giveCoins(100000);
                 protag.increaseLevel(10000, 1000000);

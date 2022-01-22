@@ -33,12 +33,37 @@ public class Battle implements InputThing {
         if (ogrek.getHealth() >= 100) {
             System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
         } else {
-            System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
+            if (ogrek.getHealth() >= 0) {
+                System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
+            } else {
+                System.out.println("\t\t\t\t\t  ENEMY HEALTH:   0" );
+            }   
+            
         }
         load();
         System.out.println("Your Health: " + protag.getHealth());
     }
+    public static void startMusic() {
+        ClipControl runner1 = new ClipControl();
+        runner1.setSong(2);
+        try {
+            runner1.load();
+        } catch (Exception e) {
+            System.err.println("err");
+        }
+        Thread thread1 = new Thread(runner1);
+        thread1.start();
+    }
     public static boolean perform(Protagonist protag) {
+        ClipControl runner1 = new ClipControl();
+        runner1.setSong(2);
+        try {
+            runner1.load();
+        } catch (Exception e) {
+            System.err.println("err");
+        }
+        Thread thread1 = new Thread(runner1);
+        thread1.start();
         InputThing input = new InputThing() {
             @Override
             public String receiveInput() {
@@ -46,15 +71,7 @@ public class Battle implements InputThing {
                 return InputThing.super.receiveInput();
             }
         };
-        ClipControl runner = new ClipControl();
-        runner.setSong(2);
-        try {
-            runner.load();
-        } catch (Exception e) {
-            System.err.println("err");
-        }
-        Thread thread = new Thread(runner);
-        thread.start();
+        
         Monster ogrek = new Monster();
         int pick = (int) (Math.random() * 3.0) + 1;
         if (pick == 1) {
@@ -67,17 +84,32 @@ public class Battle implements InputThing {
         while (ogrek.isAlive()) {
             refresh(protag, ogrek);
             System.out.println("Your Attacks:");
-            Dialogue.listOptions(protag);
+            
+            int i = 0;
+            for(;;) {
+                try {
+                  Dialogue.listOptions(protag);
+                  String o = input.receiveInput();
+                
+                  i = Integer.parseInt( o );
 
-            var inputRaw = input.receiveInput();
-            if (inputRaw.equals("exit")) {thread.interrupt(); return false;}
-            int inputInt = 0;
-            try {
-                inputInt = Integer.parseInt(inputRaw);
-            } catch (Exception e) {
-                //TODO: handle exception
-            }
-            protag.setAttackType(protag.attackTypes[inputInt - 1]);
+                  if (o.equals("exit")) {thread1.interrupt(); return false;}
+                  if (i < (protag.attackTypes.length + 1) && i > 0) {
+                    break;
+                  } else {
+                      refresh(protag, ogrek);
+                    System.out.println("Thee hath picked no valid option!");
+                  }
+                }
+                catch ( Exception e ) {
+                  refresh(protag, ogrek);
+                  System.out.println("Thee hath picked no number!");
+                }
+              }
+            
+        
+            
+            protag.setAttackType(protag.attackTypes[i - 1]);
 
 
             var dealDamage = Dialogue.dealDamage(protag, ogrek);
@@ -96,6 +128,16 @@ public class Battle implements InputThing {
         protag.giveCoins(100);
         if ( !ogrek.isAlive() && !protag.isAlive() ) {
             Dialogue.bothDie();
+            try {
+                Thread.sleep(3000);
+                //LIVES --?
+            } catch (Exception e) {
+                //TODO: handle exception
+
+            }
+        }
+        if ( !protag.isAlive() ) {
+            EndScreen.lose();
             try {
                 Thread.sleep(3000);
                 //LIVES --?
@@ -138,13 +180,16 @@ public class Battle implements InputThing {
         }
         TileMap.clearScreen();
        
-        thread.interrupt();
+        thread1.interrupt();
         return true;
 
     }
-    public static void main(String[] args) {
-        Protagonist protag = new Tank();
+    // public static void main(String[] args) {
+    //     Protagonist protag = new Tank();
 
-        perform(protag);
-    }
+    //     perform(protag);
+    //     while(true) {
+
+    //     }
+    // }
 }

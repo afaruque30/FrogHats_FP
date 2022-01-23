@@ -13,10 +13,24 @@ import input.InputThing;
 
 public class BossFight  implements InputThing{
     public static void load(){
-
-        TileMap map = new TileMap();
-        map.load("Fight.txt"); // change plz to actual scene or smthing
-        map.render(true);
+      System.out.println("          |\\                     /)");
+      System.out.println("        /\\_\\\\__               (_//");
+      System.out.println("       |   `>\\-`     _._       //`)");
+      System.out.println("        \\ /` \\\\  _.-`:::`-._  //");
+      System.out.println("         `    \\|`    :::    `|/");
+      System.out.println("               |     :::     |");
+      System.out.println("               |.....:::.....|");
+      System.out.println("               |:::::::::::::|");
+      System.out.println("               |     :::     |");
+      System.out.println("               \\     :::     /");
+      System.out.println("                \\    :::    /");
+      System.out.println("                 `-. ::: .-'");
+      System.out.println("                  //`:::`\\\\");
+      System.out.println("                 //   '   \\\\");
+      System.out.println("                |/         \\\\");
+        // TileMap map = new TileMap();
+        // map.load("Fight.txt"); // change plz to actual scene or smthing
+        // map.render(true);
 
 
     }

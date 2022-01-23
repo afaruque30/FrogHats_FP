@@ -97,7 +97,7 @@ public class Battle implements InputThing {
         } else {
             ogrek = new Worg();
         }
-        while (ogrek.isAlive()) {
+        while (ogrek.isAlive() && protag.isAlive()) {
             refresh(protag, ogrek);
             System.out.println("Your Attacks:");
             
@@ -141,7 +141,7 @@ public class Battle implements InputThing {
 
 
         }
-        protag.giveCoins(100);
+        protag.giveCoins(20 + (int) (Math.random() * 10));
         if ( !ogrek.isAlive() && !protag.isAlive() ) {
             Dialogue.bothDie();
             try {
@@ -152,7 +152,7 @@ public class Battle implements InputThing {
 
             }
         }
-        if ( !protag.isAlive() ) {
+        if ( protag.getHealth() <= 0 ) { //hmm not dying?
             EndScreen.lose();
             try {
                 Thread.sleep(3000);

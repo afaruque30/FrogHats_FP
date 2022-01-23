@@ -125,13 +125,15 @@ public class Driver {
                     map.add(player);
                     protag.kill();
                     
-                    if (protag.getLevel() == 1) {
+                    if (protag.getLevel() == 5) {
                         ClassPrestiges.prestige(driver);
                         protag.kill();
                     }
+                    protag.setHealth(protag.getMaxHealth());
                     return true;
                 } else {
                     player.moveTo(new Location(player.getLocation().row + 1, player.getLocation().col));
+                    protag.setHealth(protag.getMaxHealth());
                     return true;
                 }
                 
@@ -145,8 +147,7 @@ public class Driver {
             if (player.getLocation().equals(o.getLocation()) && !(o instanceof Enemy) && !(o instanceof Player) && !(o instanceof Npc)) {
                 if (protag.getKills() >= 2) {
                     thread.interrupt();
-                    protag.giveCoins(100000);
-                    protag.increaseLevel(10000, 1000000);
+                    
                     Shop.purchase(protag);
                 } else {
                     

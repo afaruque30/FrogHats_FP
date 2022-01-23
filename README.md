@@ -1,4 +1,4 @@
-# Final Project - Frog Hats
+# Final Project (APPLE UNLEASHED)- Frog Hats
 #### Kevin Cheng, Abdullah Faruque, Jason Zhou
 
 ## Project Description
@@ -10,8 +10,10 @@ much more content. New content includes:
 * Different unique levels to fight through to unlock the boss fight
 * Sound effects
 * A visual, interactive map
-All in the terminal, so there technically aren't any graphics necessary. To start the game, copmpile and then run
-```java Driver```. The resolution should be 100x55. Please play with your sound on!
+* Quests
+* Bossfights
+All in the terminal, so there technically aren't any graphics necessary. To start the game, compile and then run
+```java Woo```. The resolution should be 100x55. Please play with your sound on!
 
 ### The Map and Navigation
 The game map is made of a grid of "tiles", or spaces in the terminal. The terminal contains many
@@ -55,17 +57,8 @@ Guard Quest: You must type in the correct password given by Johnny in KillQuest 
 HutMan Quest: Dufus requires his book, given to you by Guard. He gives a ??? piece required to complete the ??? given by shop 
               to survive the boss fight.
 
+### EXTRA
+Apple Unleashed features 5 packages, classes (players...upgrades...enemies), constants (maps, colors), input (just one class),
+music (music), mapentities ("terminal graphics).
 
-
-### Player Classes
-
-
-
-<<<<<<< HEAD
-#### Questing
-
-=======
-### Questing
-Throughout the map, there are certain tiles that are entities on the map that aren't enemies. These
-are quest givers, who ask you to do something for some sort of reward. 
->>>>>>> 740f72a7dd18a4090cc5773559877bc2edf2f106
+Disclaimer: DO NOT MESS AROUND WITH FILES OR DELETE ANYTHING AS IT WILL NOT CAUSE IT TO WORK. ANSI CODES ARE NOT SUPPORTED BY WINDOWS CMD.

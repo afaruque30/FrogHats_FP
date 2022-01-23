@@ -8,11 +8,11 @@ public class Protagonist extends Character{
   //power, defense, attackrating, health, speed, and special hehe!
   public int killCount = 0;
 
-  // artifact, lost map, key, book, ??? from sage
-  public int[] items = {0, 0, 0, 0, 0};
+  // artifact, lost map, key, book, ??? from sage, sheep
+  public int[] items = {0, 0, 0, 0, 0, 0};
 
-  //killQuest, appleQuest, elena, hut
-  public int[] visits = {0, 0, 0, 0};
+  //killQuest, appleQuest, elena, hut, farmer dandy
+  public int[] visits = {0, 0, 0, 0, 0};
 
   //appleQuest
   public int apples = 0;

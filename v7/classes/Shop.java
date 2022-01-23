@@ -103,17 +103,17 @@ public class Shop implements InputThing{
         if (i == 0) {
             switch (shop) {
                 case RING: 
-                    return (Shop.bought[0]) ? " IN STOCK " : "   SOLD   ";
+                    return (!Shop.bought[0]) ? " IN STOCK " : "   SOLD   ";
                 case RELIC:                       
-                    return (Shop.bought[1]) ? " IN STOCK " : "   SOLD   ";
+                    return (!Shop.bought[1]) ? " IN STOCK " : "   SOLD   ";
                 case GEM: 
-                    return (Shop.bought[2]) ? " IN STOCK " : "   SOLD   "; 
+                    return (!Shop.bought[2]) ? " IN STOCK " : "   SOLD   "; 
                 case HEART: 
-                    return (Shop.bought[3]) ? " IN STOCK " : "   SOLD   ";
+                    return (!Shop.bought[3]) ? " IN STOCK " : "   SOLD   ";
                 case RABBIT: 
-                    return (Shop.bought[4]) ? " IN STOCK " : "   SOLD   "; 
+                    return (!Shop.bought[4]) ? " IN STOCK " : "   SOLD   "; 
                 case UN: 
-                    return (Shop.bought[5]) ? " IN STOCK " : "   SOLD   "; 
+                    return (!Shop.bought[5]) ? " IN STOCK " : "   SOLD   "; 
             }
         }
         return "";

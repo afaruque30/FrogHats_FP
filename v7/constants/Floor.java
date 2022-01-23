@@ -17,7 +17,8 @@ public enum Floor {
         {new Location(17, 41), Tile.SHOP,    null},
         {new Location(8, 8), Tile.APPLE, null},
         {new Location(17, 46), Tile.APPLE, null},
-        {new Location(18, 58), Tile.GUARD, null}
+        {new Location(18, 58), Tile.GUARD, null},
+      
     }),
     TWO("Floor2.txt", new Location(4, 0), new Location(19, 42), new Object[][] {
         {new Location( 4,  8), Tile.MONSTER, new Monster[] {new Ogre()}},
@@ -34,7 +35,8 @@ public enum Floor {
     THREE("Floor3.txt", new Location(9, 0), new Location(0, 0), new Object[][] {
         {new Location(14, 37), Tile.MONSTER, new Monster[] {new Ogre()}},
         {new Location( 5, 37), Tile.MONSTER, new Monster[] {new Ogre()}},
-        {new Location( 9, 49), Tile.BOSS, new Monster[] {new Boss()}}  // supposed to be boss
+        {new Location( 9, 49), Tile.BOSS, new Monster[] {new Boss()}},  // supposed to be boss
+        {new Location(2, 37), Tile.SHEEP, null}
     });
 
     private String filename;

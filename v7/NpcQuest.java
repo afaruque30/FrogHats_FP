@@ -174,5 +174,42 @@ public class NpcQuest implements InputThing{
             }
         }
     }
+    public static void lostSheep(Protagonist protag) {
+        if (protag.items[5] == 0 && protag.visits[4] < 2) {
+            protag.visits[4]++;
+            System.out.println("Farmer Appleseed: Hmm, looks like I lost my magical sheep Dorothea, help me find her!\nShe's a little hard to tame!");
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+        } else if(protag.items[5] == 0) {
+            System.out.println("Farmer Appleseed: I think she might be in the next floor...");
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+        } else if (protag.visits[4] <= 2 && protag.items[5] == 1) {
+            protag.visits[3]++;
+            System.out.println("Farmer Appleseed: Thank you! Take this magical slab of meat! It will boost your max health");
+            protag.items[5] = 2;
+            protag.increaseLevel(50, 0);
+            System.out.println(protag.getMaxHealth());
+            protag.resetHealth();
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+        } else {
+            System.out.println("Farmer Appleseed: Apples are fun!");
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+        }
+    }
 }
 

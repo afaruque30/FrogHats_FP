@@ -9,6 +9,7 @@ public enum Tile {
 
     RED (BColor.RED, FColor.RED, ' ', 'R'),
 
+    SHEEP,
     MONSTER,
     APPLE,
     BOSS,

@@ -35,6 +35,9 @@ public class Woo {
                 case GUARD:
                     map.add(new GoodGuard(map, (Location) entity[0]));
                     break;
+                case SHEEP:
+                    map.add(new Sheep(map, (Location) entity[0]));
+                    break;
                 default:
             }
         }
@@ -43,6 +46,32 @@ public class Woo {
 
     public static boolean check(Woo driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
+            if (player.getLocation().equals(o.getLocation()) && (o instanceof Sheep)) {
+                var e = Math.random();
+                if (e < 0.3) {
+                    System.out.println("You have succesfully tamed Dorothea");
+                    try {
+                        Thread.sleep(2000);
+                    } catch (Exception al) {
+                        //TODO: handle exception
+                    }
+                    protag.items[5] = 1;
+                    map.remove(o);
+                    map.map[player.getLocation().row][player.getLocation().col] = Tile.keyToTile('G');
+                    map.add(player);
+                } else {
+                    System.out.println("Hmm, Dorothea seems to refuse to acknoledge you, try again");
+                    try {
+                        Thread.sleep(2000);
+                    } catch (Exception al) {
+                        //TODO: handle exception
+                    }
+                }
+                player.moveTo(new Location(player.getLocation().row + 1, player.getLocation().col ));
+                return false;
+                
+
+            }
             if (player.getLocation().equals(o.getLocation()) && (o instanceof GoodGuard)) {
                 if (NpcQuest.guardInteraction(protag)) {
                     map.remove(o);
@@ -91,6 +120,13 @@ public class Woo {
                 map.render();
                 NpcQuest.appleQuest(protag);
                 player.moveTo(new Location(player.getLocation().row - 1, player.getLocation().col));
+                return false;
+            }
+            if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 12 && player.getLocation().col == 40) {
+                TileMap.clearScreen();
+                map.render();
+                NpcQuest.lostSheep(protag);
+                player.moveTo(new Location(player.getLocation().row, player.getLocation().col + 1));
                 return false;
             }
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {

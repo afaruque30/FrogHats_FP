@@ -8,7 +8,7 @@ import mapentities.*;
 import classes.*;
 import music.*;
 
-public class Driver {
+public class Woo {
     boolean e = true;
     Protagonist protag = new Protagonist();
 
@@ -41,7 +41,7 @@ public class Driver {
         return map;
     }
 
-    public static boolean check(Driver driver, Player player, TileMap map, Thread thread, Protagonist protag) {
+    public static boolean check(Woo driver, Player player, TileMap map, Thread thread, Protagonist protag) {
         for (MapEntity o : map.entities) {
             if (player.getLocation().equals(o.getLocation()) && (o instanceof GoodGuard)) {
                 if (NpcQuest.guardInteraction(protag)) {
@@ -116,7 +116,7 @@ public class Driver {
                 thread.interrupt();
                 if (Battle.perform(protag)) {
                     map.remove(o);
-                    if (map.map[y+1][x] == Tile.keyToTile('G')) {
+                    if (map.map[y][x+1] == Tile.keyToTile('G')) {
                         map.map[y][x] = Tile.keyToTile('G');
                     } else {
                         map.map[y][x] = Tile.keyToTile('Y');
@@ -161,7 +161,7 @@ public class Driver {
                     player.moveTo(new Location(player.getLocation().row - 1, player.getLocation().col));
                     return false;
                 }
-                
+                player.moveTo(new Location(player.getLocation().row - 1, player.getLocation().col));
                 return true;
 
             }
@@ -171,7 +171,7 @@ public class Driver {
     }
     public static void main(String[] args) {
         var e = true;
-        Driver driver = new Driver();
+        Woo driver = new Woo();
 
 
         ClipControl runner2 = new ClipControl();

@@ -103,17 +103,17 @@ public class Shop implements InputThing{
         if (i == 0) {
             switch (shop) {
                 case RING: 
-                    return (e.artifacts[0] == 0) ? " IN STOCK " : "   SOLD  ";
-                case RELIC: 
-                    return (e.artifacts[1] == 0) ? " IN STOCK " : "   SOLD  ";
+                    return (Shop.bought[0]) ? " IN STOCK " : "   SOLD   ";
+                case RELIC:                       
+                    return (Shop.bought[1]) ? " IN STOCK " : "   SOLD   ";
                 case GEM: 
-                    return (e.artifacts[2] == 0) ? " IN STOCK " : "   SOLD  "; 
+                    return (Shop.bought[2]) ? " IN STOCK " : "   SOLD   "; 
                 case HEART: 
-                    return (e.artifacts[3] == 0) ? " IN STOCK " : "   SOLD  ";
+                    return (Shop.bought[3]) ? " IN STOCK " : "   SOLD   ";
                 case RABBIT: 
-                    return (e.artifacts[4] == 0) ? " IN STOCK " : "   SOLD  "; 
+                    return (Shop.bought[4]) ? " IN STOCK " : "   SOLD   "; 
                 case UN: 
-                    return (e.artifacts[5] == 0) ? " IN STOCK " : "   SOLD  "; 
+                    return (Shop.bought[5]) ? " IN STOCK " : "   SOLD   "; 
             }
         }
         return "";
@@ -162,6 +162,11 @@ public class Shop implements InputThing{
                         break;
                     } else if (f.equals("info")) {
                         listOptions(e);
+                        try {
+                            Thread.sleep(4000);
+                        } catch (Exception asdf) {
+                            //TODO: handle exception
+                        }
                     } else {
                     System.out.println("Thee hath not picked a vlid option!");
                     }

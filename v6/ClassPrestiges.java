@@ -30,7 +30,7 @@ public class ClassPrestiges implements InputThing {
         classPick = "";
     }
 
-    public void pickAClass(Driver driver, Thread thread) {
+    public void pickAClass(Woo driver, Thread thread) {
         var done = false;
         TileMap.clearScreen();
         System.out.println("What is your name?");

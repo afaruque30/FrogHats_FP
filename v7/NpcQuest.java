@@ -3,14 +3,14 @@ import input.InputThing;
 
 public class NpcQuest implements InputThing{
     public static void killQuest(Protagonist protag) {
-        if (protag.getKills() < 1) {
+        if (protag.getKills() < 5) {
             System.out.println("Hmmm...the door is locked...");
             try {
                 Thread.sleep(2000);
             } catch (Exception e) {
                 //TODO: handle exception
             }
-        } else if (protag.getKills() >= 1 && protag.visits[0] < 2 && protag.items[1] != 1) {
+        } else if (protag.getKills() >= 5 && protag.visits[0] < 2 && protag.items[1] != 1) {
             System.out.println("Johnny: Phew, thank you for killing the mobs here.\nI lost one of my heavenly maps. Find it and you shall be rewarded");
             protag.visits[0]++;
             try {
@@ -18,7 +18,7 @@ public class NpcQuest implements InputThing{
             } catch (Exception e) {
                 //TODO: handle exception
             }
-        } else if (protag.getKills() >= 1  && protag.items[1] != 1) {
+        } else if (protag.getKills() >= 5  && protag.items[1] != 1) {
             System.out.println("Johnny: I hear that if you if you say piglet 3 times to the guard\nhe'll give u something nice. Anyways go find my map");
             
             try {

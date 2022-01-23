@@ -237,7 +237,7 @@ public class BossFight  implements InputThing{
         for (int z = 0; z < 100; z++) {
             for (int o = 0; o < 50; o++) {
                 if (z == 95) {
-                    win2 += (o == 0) ? FColor.BLACK + "The Medallion you received starts glowing, and starts fading away, and suddenly you understand" : "";
+                    win2 += (o == 0) ? FColor.BLACK + "the two pieces of ??? start glowing, and start fading away, and suddenly you understand" : "";
                 } else {
                     win2 += " ";
                 }
@@ -248,7 +248,7 @@ public class BossFight  implements InputThing{
         for (int z = 0; z < 100; z++) {
             for (int o = 0; o < 200; o++) {
                 if (z == 95) {
-                    win3 += (o == 0) ? FColor.BLACK + "So, the medallion saved my life - you think this as you are brought back into reality" : "";
+                    win3 += (o == 0) ? FColor.BLACK + "So, the old man really gave me something useful! - you think this as you are brought back into reality" : "";
                 } else {
                     win3 += " ";
                 }

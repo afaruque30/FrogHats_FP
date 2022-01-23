@@ -30,7 +30,7 @@ public class ClassPrestiges implements InputThing {
         classPick = "";
     }
 
-    public void pickAClass(Driver driver, Thread thread) {
+    public void pickAClass(Woo driver, Thread thread) {
         var done = false;
         TileMap.clearScreen();
         System.out.println("What is your name?");
@@ -78,7 +78,7 @@ public class ClassPrestiges implements InputThing {
         }
         thread.interrupt();
     }
-    public static void prestige(Driver driver) {
+    public static void prestige(Woo driver) {
         String pick = "";
     String[] picks = {"",""};
     System.out.println("\nYour current class : " + driver.protag.getType());

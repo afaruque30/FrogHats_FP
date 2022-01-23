@@ -137,13 +137,22 @@ Kevin    ::  working on the lore
 Problems :: none atm
 ==============================================================
 
-2022-1-20
+2022-1-22
 --------------------------------------------------------------
 Abdullah :: changed visuals for battle scenes
 Jason    :: finished the quests, fully polished
 Kevin    ::  working on lore + dialogue
 
 Problems :: none, we basiaclly done! 
+==============================================================
+
+2022-1-23
+--------------------------------------------------------------
+Abdullah :: play testing/looking for bugs
+Jason    :: brand new credits scene, very cool pls watch mykolyk
+Kevin    ::  play testing/looking for bugs
+
+Problems :: 
 ==============================================================
 
 

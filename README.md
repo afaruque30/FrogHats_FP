@@ -1,6 +1,9 @@
 # Final Project (APPLE UNLEASHED)- Frog Hats
 #### Kevin Cheng, Abdullah Faruque, Jason Zhou
 
+## Song of the week
+Sunshine - Whethan
+
 ## Project Description
 The main goal of the project to transform YoRPG into an actual game, playable in the terminal with
 much more content. New content includes:

@@ -56,6 +56,8 @@ Guard Quest: You must type in the correct password given by Johnny in KillQuest 
 
 HutMan Quest: Dufus requires his book, given to you by Guard. He gives a ??? piece required to complete the ??? given by shop 
               to survive the boss fight.
+              
+Sheep Quest: Find a sheep, Farmer Appleseed's, and return it for 50 extra maxhealth.
 
 ### EXTRA
 Apple Unleashed features 5 packages, classes (players...upgrades...enemies), constants (maps, colors), input (just one class),

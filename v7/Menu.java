@@ -24,12 +24,26 @@ public class Menu implements InputThing {
     }
 
     public void loadMenu() {
-        display = "\t\t\t 1." + Constants.MenuDialogue.MENU_OPTION_ONE;
+        display =    ("              ____ ____  ____  _       ___             ");
+        display += ("\n             /    |    \\|    \\| |     /  _]            ");
+        display += ("\n            |  o  |  o  |  o  | |    /  [_             ");
+        display += ("\n            |     |   _/|   _/| |___|    _]            ");
+        display += ("\n            |  _  |  |  |  |  |     |   [_             ");
+        display += ("\n            |  |  |  |  |  |  |     |     |            ");
+        display += ("\n __ __ ____ |__|__|__|__|__|__|_____|_____|  ___ ___   ");
+        display += ("\n|  |  |    \\| |     /  _]/    |/ ___|  |  | /  _|   \\  ");
+        display += ("\n|  |  |  _  | |    /  [_|  o  (   \\_|  |  |/  [_|    \\ ");
+        display += ("\n|  |  |  |  | |___|    _|     |\\__  |  _  |    _|  D  |");
+        display += ("\n|  :  |  |  |     |   [_|  _  |/  \\ |  |  |   [_|     |");
+        display += ("\n|     |  |  |     |     |  |  |\\    |  |  |     |     |");
+        display += ("\n \\__,_|__|__|_____|_____|__|__| \\___|__|__|_____|_____|\n\n");
+        
+        display += "\t\t\t 1." + Constants.MenuDialogue.MENU_OPTION_ONE;
         display += "\n\n\t\t       2." + Constants.MenuDialogue.MENU_OPTION_TWO;
         display += "\n\n\t\t     3." + Constants.MenuDialogue.MENU_OPTION_THREE;
-
+        // btw did u see the quests
     }
-
+    // XD 
     //utilizes ternary operator
     public void loadSettings() {
         display = Constants.MenuDialogue.SETTINGS_ONE;

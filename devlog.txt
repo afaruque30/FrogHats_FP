@@ -12,22 +12,28 @@ Tunleashed YoRPG
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+making the map was truly a challenge. We knew we would have to use a 2d array. At first, we tried to make the
+array by "hard coding it" by manually creating an empty array full of empty quotations. However, this seemed like pain 
+to edit, so we decided to use txt files. WE would create the map on a txt file, edit on notepad since it's very convenient. 
+We then made a string array that fills itself up with the letters from the txt. each letter is coded to be a specific tile. The string array
+is then turned into a tile array, which can be viewed when playing. 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+.mid files for music are so small compared to mp3 files. (33mb vs 33kb)!
+
+enums can be used LEVEL("string", 1) like that
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
 
-1. We scaled down our plan since we cant possible finish all our intented things
+
+1. WE DID NOT SCALE DOWN HAHA
+2. we changed mb music files to kb music files. 
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,6 +126,24 @@ Jason    :: fixing bug in battleloader, enemy was always bandit. Boss Battle cre
 Kevin    ::  continued to work on the readme file. Writing up spicy lore.
 
 Problems :: time problem has been alleviated with the extra time granted by sir mykolyk. 
+==============================================================
+
+2022-1-21
+--------------------------------------------------------------
+Abdullah :: 
+Jason    :: working on quests, soon to be done
+Kevin    ::  working on the lore
+
+Problems :: none atm
+==============================================================
+
+2022-1-20
+--------------------------------------------------------------
+Abdullah :: changed visuals for battle scenes
+Jason    :: finished the quests, fully polished
+Kevin    ::  working on lore + dialogue
+
+Problems :: none, we basiaclly done! 
 ==============================================================
 
 

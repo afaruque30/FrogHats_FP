@@ -26,9 +26,17 @@ public class NpcQuest implements InputThing{
             } catch (Exception e) {
                 //TODO: handle exception
             }
-        } else {
+        } else if (protag.items[1] == 1 && protag.visits[0] <= 2) {
             System.out.println("Johnny: Thank you soooo MUCH! I can finally dig up that treasure chest!\nAnyways, take this weird artifact...\nI hear that if you if you say piglet 3 times to the guard");
             protag.items[0] = 1;
+            protag.visits[0]++;
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+        } else {
+            System.out.println("Johnny: Have you tried the guard?");
             try {
                 Thread.sleep(2000);
             } catch (Exception e) {

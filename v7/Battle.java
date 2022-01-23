@@ -21,22 +21,37 @@ public class Battle implements InputThing {
         BANDIT
     }
     public static void load() {
-
-        TileMap map = new TileMap();
-        map.load("Fight.txt"); // change plz to actual scene or smthing
-        map.render(true);
+        System.out.println("        |\\                     /)");
+        System.out.println("        /\\_\\\\__               (_//");
+        System.out.println("       |   `>\\-`     _._       //`)");
+        System.out.println("        \\ /` \\\\  _.-`:::`-._  //");
+        System.out.println("         `    \\|`    :::    `|/");
+        System.out.println("               |     :::     |");
+        System.out.println("               |.....:::.....|");
+        System.out.println("               |:::::::::::::|");
+        System.out.println("               |     :::     |");
+        System.out.println("               \\     :::     /");
+        System.out.println("                \\    :::    /");
+        System.out.println("                 `-. ::: .-'");
+        System.out.println("                  //`:::`\\\\");
+        System.out.println("                 //   '   \\\\");
+        System.out.println("                |/         \\\\");
+        
+        //TileMap map = new TileMap();
+        //map.load("Fight.txt"); // change plz to actual scene or smthing
+        //map.render(true);
 
 
     }
     public static void refresh(Protagonist protag, Monster ogrek) {
         TileMap.clearScreen();
         if (ogrek.getHealth() >= 100) {
-            System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
+            System.out.println("\\t\\t\\t\\t\\t ENEMY HEALTH: " + ogrek.getHealth());
         } else {
             if (ogrek.getHealth() >= 0) {
-                System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
+                System.out.println("\\t\\t\\t\\t\\t  ENEMY HEALTH:  " + ogrek.getHealth());
             } else {
-                System.out.println("\t\t\t\t\t  ENEMY HEALTH:   0" );
+                System.out.println("\\t\\t\\t\\t\\t  ENEMY HEALTH:   0" );
             }   
             
         }

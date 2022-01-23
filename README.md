@@ -37,6 +37,122 @@ are different artifacts that are tailored to affect different stats. You can che
 does by typing ```info``` in game. There are seven different items you can buy, unlocked after
 killing two monsters.
 
+
+### Quests
+Apple Unleashed v6 update presents quests! These quests are fun, and give hidden items and perks
+
+KillQuest: This quest is given by the NPC on stage 1 the farthest to the right. It is unlocked by killing all 
+           the mobs in stage one. He asks you for a map, which is rewarded in AppleQuest, and gives you an artifact 
+           for ArtifactQuest, as well as a passcode for the HutMan quest
+
+AppleQuest: Scattered around the map on levels 1 and 2 are 4 apples. Give this so Sammy on stage2 for a map required in KillQuest
+
+ArtifactQuest: This quest is given by Elena on stage 1. You need an artifact which is given by Johnny in KillQuest. 
+               Elena rewards you with a key, required to advance to stage 3. 
+
+Guard Quest: You must type in the correct password given by Johnny in KillQuest (piglet), he will give a book and leave.
+
+HutMan Quest: Dufus requires his book, given to you by Guard. He gives a ??? piece required to complete the ??? given by shop 
+              to survive the boss fight.
+
+
+
+### Player Classes
+
+Subclasses:
+(Specials unlocked at level 5)
+
+
+Archer:
+  Base:
+    - 5 Defense
+    - 75 HP
+    - 40 strength
+    - 1 attack attackRating
+    - 50 Speed
+  Sniper: (attack once every 2 turns)
+    - 10 Defense
+    - 75 HP
+    - 100 Strength
+    - Speed +20
+    - 1 attack Rating
+    Special:
+      -Head shot: 30% to instakill, 1% for bosses
+  Gunner:
+    - 10 defense
+    - 100 HP
+    - Speed -20
+    - 1 attack rating
+    - 60 strength
+    Special:
+      - RRRRRRRRRRRRRRRRRRM: 90% to shoot three bullets do normal damage 10% to jam for 3 turns
+
+
+Swordsman:
+  Paladin:
+    - 150 HP
+    - 20 Defense
+    - Speed += 5
+    - 1.5 Attack Rating 
+    - 50 strength
+    Special: 
+    - Holy Strike: 30% chance to ignore armor!
+  Barbarian:
+    - 125 HP
+    - 10 Defense
+    - 1.4 Attack Rating 
+    - 70 strength
+    - Speed += 10
+    Special:
+      - Bloodlurst: For every 5% of HP lost, deal 2% more damage
+
+Tank:
+  - 20 defense
+  - 20 strength
+  - 0.3 attack rating
+  - 200 health
+  - 20 speed
+  Special: Sheild O' Life: Heal 20 HP (cannot exceed current health)
+  Tonk:
+    - 30 defense
+    - 25 strength
+    - 0.4 attack rating
+    - 300 health
+    - 15 speed
+    - Special: Taunt: Next two attacks, monster can 50% chance of missing (cooldown 4 turns) <-- not implemented
+  Fortress:
+    - 50 defense
+    - 5 strength
+    - 0.3 attack rating 
+    - 500 health 
+    - 5 speed 
+    - Special: Shield Rain: Does 20 true damage
+
+Wizard:
+    - 65 health
+    - 5 defense
+    - 1.5 attack rating 
+    - 100 strength
+    - 15 speed
+    Special: Vortex Summoning
+    - Deal an extra 15 true damage
+
+    Arcane Wizard: 
+    - 60 health 
+    - 6 defense 
+    - 1.7 attack rating 
+    - 110 strength
+    - 10 speed 
+    Special: N/A
+
+    Necromancer: 
+    - 70 health 
+    - 10 defense 
+    - 1.4 attack rating 
+    - 50 strength 
+    - 15 speed 
+    Special: Undead: Summon an undead (up to two). Undeads have health and attack scaled to wizard lvl
+
 <<<<<<< HEAD
 #### Questing
 

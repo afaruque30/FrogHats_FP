@@ -4,7 +4,7 @@ package classes;
 public class Worg extends Monster {
     public Worg() {
         super();
-        this.speed = 200;
+        this.speed = 150;
         this.health = 50;
         this.strength = 15;
 

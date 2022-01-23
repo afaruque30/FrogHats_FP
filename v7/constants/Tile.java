@@ -7,7 +7,7 @@ public enum Tile {
     DOOR  (BColor.WHITE,  FColor.BLACK,  ' ', 'D'),
     NEXT  (BColor.PURPLE, FColor.BLACK,  '+', 'P'),
 
-    RED (null, FColor.RED, ' ', 'R'),
+    RED (BColor.RED, FColor.RED, ' ', 'R'),
 
     MONSTER,
     APPLE,

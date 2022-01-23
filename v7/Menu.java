@@ -22,21 +22,43 @@ public class Menu implements InputThing {
         level = LEVEL.MENU;
         input = "";
     }
+    public void present() {
+        TileMap.clearScreen();
+        System.out.println("Team FrogHats Presents...");
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        TileMap.clearScreen();
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        System.out.println("A new action packed, super adventure!");
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        TileMap.clearScreen();
+    }
 
     public void loadMenu() {
-        display =    ("              ____ ____  ____  _       ___             ");
-        display += ("\n             /    |    \\|    \\| |     /  _]            ");
-        display += ("\n            |  o  |  o  |  o  | |    /  [_             ");
-        display += ("\n            |     |   _/|   _/| |___|    _]            ");
-        display += ("\n            |  _  |  |  |  |  |     |   [_             ");
-        display += ("\n            |  |  |  |  |  |  |     |     |            ");
-        display += ("\n __ __ ____ |__|__|__|__|__|__|_____|_____|  ___ ___   ");
-        display += ("\n|  |  |    \\| |     /  _]/    |/ ___|  |  | /  _|   \\  ");
-        display += ("\n|  |  |  _  | |    /  [_|  o  (   \\_|  |  |/  [_|    \\ ");
-        display += ("\n|  |  |  |  | |___|    _|     |\\__  |  _  |    _|  D  |");
-        display += ("\n|  :  |  |  |     |   [_|  _  |/  \\ |  |  |   [_|     |");
-        display += ("\n|     |  |  |     |     |  |  |\\    |  |  |     |     |");
-        display += ("\n \\__,_|__|__|_____|_____|__|__| \\___|__|__|_____|_____|\n\n");
+        display =    ("               ____ ____  ____  _       ___             ");
+        display += ("\n              /    |    \\|    \\| |     /  _]            ");
+        display += ("\n             |  o  |  o  |  o  | |    /  [_             ");
+        display += ("\n             |     |   _/|   _/| |___|    _]            ");
+        display += ("\n             |  _  |  |  |  |  |     |   [_             ");
+        display += ("\n             |  |  |  |  |  |  |     |     |            ");
+        display += ("\n  __ __ ____ |__|__|__|__|__|__|_____|_____|  ___ ___   ");
+        display += ("\n |  |  |    \\| |     /  _]/    |/ ___|  |  | /  _|   \\  ");
+        display += ("\n |  |  |  _  | |    /  [_|  o  (   \\_|  |  |/  [_|    \\ ");
+        display += ("\n |  |  |  |  | |___|    _|     |\\__  |  _  |    _|  D  |");
+        display += ("\n |  :  |  |  |     |   [_|  _  |/  \\ |  |  |   [_|     |");
+        display += ("\n |     |  |  |     |     |  |  |\\    |  |  |     |     |");
+        display += ("\n  \\__,_|__|__|_____|_____|__|__| \\___|__|__|_____|_____|\n\n");
         
         display += "\t\t\t 1." + Constants.MenuDialogue.MENU_OPTION_ONE;
         display += "\n\n\t\t       2." + Constants.MenuDialogue.MENU_OPTION_TWO;
@@ -47,7 +69,7 @@ public class Menu implements InputThing {
     //utilizes ternary operator
     public void loadSettings() {
         display = Constants.MenuDialogue.SETTINGS_ONE;
-        display += (sound) ? " ON." : " OFF.";
+       
     }
 
     public void loadInstructions() {

@@ -184,7 +184,7 @@ public class BossFight  implements InputThing{
           thread.interrupt();
           return false;
         }
-    
+        TileMap.clearScreen();
         System.out.println("*Gasp* How is this possible? I-i am the MOST POWERFUL BEING IN THE UNIVERSE!");
         System.out.println("I have one more attack left. Since I am dying I will perform my most powerful attack yet...");
         System.out.println("SELF DESTRUCTION! MWAHAHAHA!");
@@ -193,7 +193,12 @@ public class BossFight  implements InputThing{
                              
         System.out.println("Boss performs his final attack: Self Destruction. Everything goes white.");
         thread.interrupt();
-        
+        try {
+          Thread.sleep(5000);
+        } catch (Exception e) {
+          //TODO: handle exception
+        }  
+      
         String white = BColor.WHITE + "";
         String win1 = BColor.WHITE + "";
         String win2 = BColor.WHITE + "";

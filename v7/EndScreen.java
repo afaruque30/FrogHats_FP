@@ -35,7 +35,7 @@ public class EndScreen {
         } catch (Exception e) {
             //TODO: handle exception
         }
-        String[] things = {"As your life fades out of existence...", "You think to yourself...", "That your death wasn't in vain...", "You will be remembered by those you met along the way...", "Your friends and family...", "And with a bitter smile..." + "You close your eyes and float away...", "The END" };
+        String[] things = {"As your life fades out of existence...", "You think to yourself...", "That your death wasn't in vain...", "You will be remembered by those you met along the way...", "Your friends and family...", "And with a bitter smile..." + "You close your eyes and think about...apples", "The END" };
         for (int i = 0; i < things.length; i++) {
             TileMap.clearScreen();
             
@@ -47,9 +47,18 @@ public class EndScreen {
                 //TODO: handle exception
             }
         }
-        while(true) {
-
+        try {
+            Thread.sleep(120000);
+        } catch (Exception e) {
+            //TODO: handle exception
         }
+        thread.interrupt();
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        System.exit(0);
     }
     public static void main(String[] args) {
         win();

@@ -21,7 +21,7 @@ public class Battle implements InputThing {
         BANDIT
     }
     public static void load() {
-        System.out.println("        |\\                     /)");
+        System.out.println("          |\\                     /)");
         System.out.println("        /\\_\\\\__               (_//");
         System.out.println("       |   `>\\-`     _._       //`)");
         System.out.println("        \\ /` \\\\  _.-`:::`-._  //");
@@ -43,15 +43,16 @@ public class Battle implements InputThing {
 
 
     }
+    
     public static void refresh(Protagonist protag, Monster ogrek) {
         TileMap.clearScreen();
         if (ogrek.getHealth() >= 100) {
-            System.out.println("\\t\\t\\t\\t\\t ENEMY HEALTH: " + ogrek.getHealth());
+            System.out.println("\t\t\t\t\t ENEMY HEALTH: " + ogrek.getHealth());
         } else {
             if (ogrek.getHealth() >= 0) {
-                System.out.println("\\t\\t\\t\\t\\t  ENEMY HEALTH:  " + ogrek.getHealth());
+                System.out.println("\t\t\t\t\t  ENEMY HEALTH:  " + ogrek.getHealth());
             } else {
-                System.out.println("\\t\\t\\t\\t\\t  ENEMY HEALTH:   0" );
+                System.out.println("\t\t\t\t\t  ENEMY HEALTH:   0" );
             }   
             
         }
@@ -198,12 +199,7 @@ public class Battle implements InputThing {
         return true;
 
     }
-    // public static void main(String[] args) {
-    //     Protagonist protag = new Tank();
-
-    //     perform(protag);
-    //     while(true) {
-
-    //     }
-    // }
+    public static void main(String[] args) {
+        load();
+    }
 }

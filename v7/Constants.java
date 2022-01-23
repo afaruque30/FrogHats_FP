@@ -10,7 +10,7 @@ public interface Constants {
       public final String MENU_OPTION_TWO = "SETTINGS";
       public final String MENU_OPTION_THREE = "INSTRUCTIONS";
       
-      public final String SETTINGS_ONE = "SOUND:";
+      public final String SETTINGS_ONE = "Created by team Froghats";
       public final String SETTINGS_TWO = "";
 
       public final String INSTRUCTIONS = "Welcome to Unleashed YoRPG.\n" + 

@@ -69,12 +69,14 @@ public class Driver {
                 TileMap.clearScreen();
                 map.render();
                 NpcQuest.killQuest(protag);
+                player.moveTo(new Location(player.getLocation().row, player.getLocation().col - 1));
                 return false;
             }
             if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 13 && player.getLocation().col == 19) {
                 TileMap.clearScreen();
                 map.render();
                 NpcQuest.artifactQuest(protag);
+                player.moveTo(new Location(player.getLocation().row + 1, player.getLocation().col));
                 return false;
             }
             if (player.getLocation().equals(o.getLocation()) &&  (o instanceof Npc) && player.getLocation().row == 18 && player.getLocation().col == 1) {
@@ -88,6 +90,7 @@ public class Driver {
                 TileMap.clearScreen();
                 map.render();
                 NpcQuest.appleQuest(protag);
+                player.moveTo(new Location(player.getLocation().row - 1, player.getLocation().col));
                 return false;
             }
             if (player.getLocation().equals(o.getLocation()) && o instanceof EnemyBoss) {
@@ -113,7 +116,12 @@ public class Driver {
                 thread.interrupt();
                 if (Battle.perform(protag)) {
                     map.remove(o);
-                    map.map[y][x] = Tile.keyToTile('Y');
+                    if (map.map[y+1][x] == Tile.keyToTile('G')) {
+                        map.map[y][x] = Tile.keyToTile('G');
+                    } else {
+                        map.map[y][x] = Tile.keyToTile('Y');
+                    }
+                    
                     map.add(player);
                     protag.kill();
                     
@@ -178,6 +186,7 @@ public class Driver {
         }
         Thread thread1 = new Thread(runner2);
         thread1.start();
+        menu.present();
         menu.load(thread1);
 
         classes.pickAClass(driver, thread1);

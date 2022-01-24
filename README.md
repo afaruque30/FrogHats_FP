@@ -15,8 +15,9 @@ much more content. New content includes:
 * A visual, interactive map
 * Quests
 * Bossfights
+
 All in the terminal, so there technically aren't any graphics necessary.
-* To start the game do the following
+To start the game do the following:
 ```
 $ git clone git@github.com:afaruque30/FrogHats_FP.git
 $ cd ~/path/to/FrogHats_FP

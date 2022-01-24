@@ -4,7 +4,7 @@ Jason Zhou
 Kevin Cheng
 pd 8
 ---------------------
-Tunleashed YoRPG
+Apple Unleashed
 
 
 
@@ -28,6 +28,8 @@ COOL STUFF LEARNED
 
 enums can be used LEVEL("string", 1) like that
 
+ANSI
+
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,7 +42,9 @@ LESSONS LEARNED
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
 
-
+Here's the weird thing about terminal, there are no event listeners. 
+(Well... there are, you just have to import other classes)
+It's so annoying seeing that we are severely limited... :(
 
  ______   ______   __   __   __       ______   _______     
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
@@ -149,7 +153,7 @@ Problems :: none, we basiaclly done!
 2022-1-23
 --------------------------------------------------------------
 Abdullah :: play testing/looking for bugs
-Jason    :: brand new credits scene, very cool pls watch mykolyk
+Jason    :: brand new credits scene, very cool pls watch mykolyk, uhh in order to see this buy the ??? in shop complete the hutman quest and choose archer -> gunner
 Kevin    ::  play testing/looking for bugs
 
 Problems :: 

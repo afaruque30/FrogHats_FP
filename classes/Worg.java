@@ -4,20 +4,20 @@ package classes;
 public class Worg extends Monster {
     public Worg() {
         super();
-        this.speed = 150;
+        this.speed = 100;
         this.health = 50;
         this.strength = 15;
 
     }
     public Worg(String name) {
         super(name);
-        this.speed = 200;
+        this.speed = 100;
         this.health = 50;
         this.strength = 15;
     }
     public Worg(int health, int strength, double attackRating, int defense, String name, int level) {
         super(health, strength, attackRating, defense, name, level);
-        this.speed = 200;
+        this.speed = 100;
         this.health = 50;
         this.strength = 15;
     }

@@ -15,8 +15,15 @@ much more content. New content includes:
 * A visual, interactive map
 * Quests
 * Bossfights
-All in the terminal, so there technically aren't any graphics necessary. To start the game, compile and then run
-```java Woo```. The resolution should be 100x55. Please play with your sound on!
+All in the terminal, so there technically aren't any graphics necessary.
+* To start the game do the following
+```
+$ git clone git@github.com:afaruque30/FrogHats_FP.git
+$ cd ~/path/to/FrogHats_FP
+$ javac Woo.java  
+$ java Woo  
+```
+Enjoy!
 
 ### The Map and Navigation
 The game map is made of a grid of "tiles", or spaces in the terminal. The terminal contains many
